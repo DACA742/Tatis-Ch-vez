@@ -1790,3 +1790,22 @@ header.et-l.et-l--header:after {
         opacity: 1
     }
 }
+
+.et_pb_text_10 h3, .et_pb_text_12 h3, .et_pb_text_21 h3 {
+    font-family: 'Antic Didone', Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    line-height: 1.4em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    padding-bottom: 10px;
+    line-height: 1em;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 980px) {
+    .et_pb_text_10 h3, .et_pb_text_12 h3, .et_pb_text_21 h3 {
+        font-size: 20px;
+    }
+}

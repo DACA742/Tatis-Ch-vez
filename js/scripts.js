@@ -1,493 +1,112 @@
-$(document).ready(function () {
-
-    /***************** Waypoints ******************/
-
-    $('.wp1').waypoint(function () {
-        $('.wp1').addClass('animated fadeInLeft');
-    }, {
-        offset: '75%'
-    });
-    $('.wp2').waypoint(function () {
-        $('.wp2').addClass('animated fadeInRight');
-    }, {
-        offset: '75%'
-    });
-    $('.wp3').waypoint(function () {
-        $('.wp3').addClass('animated fadeInLeft');
-    }, {
-        offset: '75%'
-    });
-    $('.wp4').waypoint(function () {
-        $('.wp4').addClass('animated fadeInRight');
-    }, {
-        offset: '75%'
-    });
-    $('.wp5').waypoint(function () {
-        $('.wp5').addClass('animated fadeInLeft');
-    }, {
-        offset: '75%'
-    });
-    $('.wp6').waypoint(function () {
-        $('.wp6').addClass('animated fadeInRight');
-    }, {
-        offset: '75%'
-    });
-    $('.wp7').waypoint(function () {
-        $('.wp7').addClass('animated fadeInUp');
-    }, {
-        offset: '75%'
-    });
-    $('.wp8').waypoint(function () {
-        $('.wp8').addClass('animated fadeInLeft');
-    }, {
-        offset: '75%'
-    });
-    $('.wp9').waypoint(function () {
-        $('.wp9').addClass('animated fadeInRight');
-    }, {
-        offset: '75%'
-    });
-
-    /***************** Initiate Flexslider ******************/
-    $('.flexslider').flexslider({
-        animation: "slide"
-    });
-
-    /***************** Initiate Fancybox ******************/
-
-    $('.single_image').fancybox({
-        padding: 4
-    });
-
-    $('.fancybox').fancybox({
-        padding: 4,
-        width: 1000,
-        height: 800
-    });
-
-    /***************** Tooltips ******************/
-    $('[data-toggle="tooltip"]').tooltip();
-
-    /***************** Nav Transformicon ******************/
-
-    /* When user clicks the Icon */
-    $('.nav-toggle').click(function () {
-        $(this).toggleClass('active');
-        $('.header-nav').toggleClass('open');
-        event.preventDefault();
-    });
-    /* When user clicks a link */
-    $('.header-nav li a').click(function () {
-        $('.nav-toggle').toggleClass('active');
-        $('.header-nav').toggleClass('open');
-
-    });
-
-    /***************** Header BG Scroll ******************/
-
-    $(function () {
-        $(window).scroll(function () {
-            var scroll = $(window).scrollTop();
-
-            if (scroll >= 20) {
-                $('section.navigation').addClass('fixed');
-                $('header').css({
-                    "border-bottom": "none",
-                    "padding": "35px 0"
-                });
-                $('header .member-actions').css({
-                    "top": "26px",
-                });
-                $('header .navicon').css({
-                    "top": "34px",
-                });
-            } else {
-                $('section.navigation').removeClass('fixed');
-                $('header').css({
-                    "border-bottom": "solid 1px rgba(255, 255, 255, 0.2)",
-                    "padding": "50px 0"
-                });
-                $('header .member-actions').css({
-                    "top": "41px",
-                });
-                $('header .navicon').css({
-                    "top": "48px",
-                });
-            }
-        });
-    });
-    /***************** Smooth Scrolling ******************/
-
-    $(function () {
-
-        $('a[href*=#]:not([href=#])').click(function () {
-            if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top - 90
-                    }, 2000);
-                    return false;
+!function (t, e) { "object" == typeof exports && "object" == typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define("ScrollBooster", [], e) : "object" == typeof exports ? exports.ScrollBooster = e() : t.ScrollBooster = e() }(this, (function () { return function (t) { var e = {}; function i(o) { if (e[o]) return e[o].exports; var n = e[o] = { i: o, l: !1, exports: {} }; return t[o].call(n.exports, n, n.exports, i), n.l = !0, n.exports } return i.m = t, i.c = e, i.d = function (t, e, o) { i.o(t, e) || Object.defineProperty(t, e, { enumerable: !0, get: o }) }, i.r = function (t) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(t, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(t, "__esModule", { value: !0 }) }, i.t = function (t, e) { if (1 & e && (t = i(t)), 8 & e) return t; if (4 & e && "object" == typeof t && t && t.__esModule) return t; var o = Object.create(null); if (i.r(o), Object.defineProperty(o, "default", { enumerable: !0, value: t }), 2 & e && "string" != typeof t) for (var n in t) i.d(o, n, function (e) { return t[e] }.bind(null, n)); return o }, i.n = function (t) { var e = t && t.__esModule ? function () { return t.default } : function () { return t }; return i.d(e, "a", e), e }, i.o = function (t, e) { return Object.prototype.hasOwnProperty.call(t, e) }, i.p = "", i(i.s = 0) }([function (t, e, i) { "use strict"; function o(t, e) { var i = Object.keys(t); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(t); e && (o = o.filter((function (e) { return Object.getOwnPropertyDescriptor(t, e).enumerable }))), i.push.apply(i, o) } return i } function n(t) { for (var e = 1; e < arguments.length; e++) { var i = null != arguments[e] ? arguments[e] : {}; e % 2 ? o(Object(i), !0).forEach((function (e) { r(t, e, i[e]) })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(i)) : o(Object(i)).forEach((function (e) { Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(i, e)) })) } return t } function r(t, e, i) { return e in t ? Object.defineProperty(t, e, { value: i, enumerable: !0, configurable: !0, writable: !0 }) : t[e] = i, t } function s(t, e) { if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function") } function a(t, e) { for (var i = 0; i < e.length; i++) { var o = e[i]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(t, o.key, o) } } i.r(e), i.d(e, "default", (function () { return p })); var l = function (t) { return Math.max(t.offsetHeight, t.scrollHeight) }, p = function () { function t() { var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}; s(this, t); var i = { content: e.viewport.children[0], direction: "all", pointerMode: "all", scrollMode: void 0, bounce: !0, bounceForce: .1, friction: .05, textSelection: !1, inputsFocus: !0, emulateScroll: !1, preventDefaultOnEmulateScroll: !1, preventPointerMoveDefault: !0, lockScrollOnDragDirection: !1, pointerDownPreventDefault: !0, dragDirectionTolerance: 40, onPointerDown: function () { }, onPointerUp: function () { }, onPointerMove: function () { }, onClick: function () { }, onUpdate: function () { }, onWheel: function () { }, shouldScroll: function () { return !0 } }; if (this.props = n(n({}, i), e), this.props.viewport && this.props.viewport instanceof Element) if (this.props.content) { this.isDragging = !1, this.isTargetScroll = !1, this.isScrolling = !1, this.isRunning = !1; var o = { x: 0, y: 0 }; this.position = n({}, o), this.velocity = n({}, o), this.dragStartPosition = n({}, o), this.dragOffset = n({}, o), this.clientOffset = n({}, o), this.dragPosition = n({}, o), this.targetPosition = n({}, o), this.scrollOffset = n({}, o), this.rafID = null, this.events = {}, this.updateMetrics(), this.handleEvents() } else console.error("ScrollBooster init error: Viewport does not have any content"); else console.error('ScrollBooster init error: "viewport" config property must be present and must be Element') } var e, i, o; return e = t, (i = [{ key: "updateOptions", value: function () { var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}; this.props = n(n({}, this.props), t), this.props.onUpdate(this.getState()), this.startAnimationLoop() } }, { key: "updateMetrics", value: function () { var t; this.viewport = { width: this.props.viewport.clientWidth, height: this.props.viewport.clientHeight }, this.content = { width: (t = this.props.content, Math.max(t.offsetWidth, t.scrollWidth)), height: l(this.props.content) }, this.edgeX = { from: Math.min(-this.content.width + this.viewport.width, 0), to: 0 }, this.edgeY = { from: Math.min(-this.content.height + this.viewport.height, 0), to: 0 }, this.props.onUpdate(this.getState()), this.startAnimationLoop() } }, { key: "startAnimationLoop", value: function () { var t = this; this.isRunning = !0, cancelAnimationFrame(this.rafID), this.rafID = requestAnimationFrame((function () { return t.animate() })) } }, { key: "animate", value: function () { var t = this; if (this.isRunning) { this.updateScrollPosition(), this.isMoving() || (this.isRunning = !1, this.isTargetScroll = !1); var e = this.getState(); this.setContentPosition(e), this.props.onUpdate(e), this.rafID = requestAnimationFrame((function () { return t.animate() })) } } }, { key: "updateScrollPosition", value: function () { this.applyEdgeForce(), this.applyDragForce(), this.applyScrollForce(), this.applyTargetForce(); var t = 1 - this.props.friction; this.velocity.x *= t, this.velocity.y *= t, "vertical" !== this.props.direction && (this.position.x += this.velocity.x), "horizontal" !== this.props.direction && (this.position.y += this.velocity.y), this.props.bounce && !this.isScrolling || this.isTargetScroll || (this.position.x = Math.max(Math.min(this.position.x, this.edgeX.to), this.edgeX.from), this.position.y = Math.max(Math.min(this.position.y, this.edgeY.to), this.edgeY.from)) } }, { key: "applyForce", value: function (t) { this.velocity.x += t.x, this.velocity.y += t.y } }, { key: "applyEdgeForce", value: function () { if (this.props.bounce && !this.isDragging) { var t = this.position.x < this.edgeX.from, e = this.position.x > this.edgeX.to, i = this.position.y < this.edgeY.from, o = this.position.y > this.edgeY.to, n = t || e, r = i || o; if (n || r) { var s = t ? this.edgeX.from : this.edgeX.to, a = i ? this.edgeY.from : this.edgeY.to, l = s - this.position.x, p = a - this.position.y, c = { x: l * this.props.bounceForce, y: p * this.props.bounceForce }, h = this.position.x + (this.velocity.x + c.x) / this.props.friction, u = this.position.y + (this.velocity.y + c.y) / this.props.friction; (t && h >= this.edgeX.from || e && h <= this.edgeX.to) && (c.x = l * this.props.bounceForce - this.velocity.x), (i && u >= this.edgeY.from || o && u <= this.edgeY.to) && (c.y = p * this.props.bounceForce - this.velocity.y), this.applyForce({ x: n ? c.x : 0, y: r ? c.y : 0 }) } } } }, { key: "applyDragForce", value: function () { if (this.isDragging) { var t = this.dragPosition.x - this.position.x, e = this.dragPosition.y - this.position.y; this.applyForce({ x: t - this.velocity.x, y: e - this.velocity.y }) } } }, { key: "applyScrollForce", value: function () { this.isScrolling && (this.applyForce({ x: this.scrollOffset.x - this.velocity.x, y: this.scrollOffset.y - this.velocity.y }), this.scrollOffset.x = 0, this.scrollOffset.y = 0) } }, { key: "applyTargetForce", value: function () { this.isTargetScroll && this.applyForce({ x: .08 * (this.targetPosition.x - this.position.x) - this.velocity.x, y: .08 * (this.targetPosition.y - this.position.y) - this.velocity.y }) } }, { key: "isMoving", value: function () { return this.isDragging || this.isScrolling || Math.abs(this.velocity.x) >= .01 || Math.abs(this.velocity.y) >= .01 } }, { key: "scrollTo", value: function () { var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}; this.isTargetScroll = !0, this.targetPosition.x = -t.x || 0, this.targetPosition.y = -t.y || 0, this.startAnimationLoop() } }, { key: "setPosition", value: function () { var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}; this.velocity.x = 0, this.velocity.y = 0, this.position.x = -t.x || 0, this.position.y = -t.y || 0, this.startAnimationLoop() } }, { key: "getState", value: function () { return { isMoving: this.isMoving(), isDragging: !(!this.dragOffset.x && !this.dragOffset.y), position: { x: -this.position.x, y: -this.position.y }, dragOffset: this.dragOffset, dragAngle: this.getDragAngle(this.clientOffset.x, this.clientOffset.y), borderCollision: { left: this.position.x >= this.edgeX.to, right: this.position.x <= this.edgeX.from, top: this.position.y >= this.edgeY.to, bottom: this.position.y <= this.edgeY.from } } } }, { key: "getDragAngle", value: function (t, e) { return Math.round(Math.atan2(t, e) * (180 / Math.PI)) } }, { key: "getDragDirection", value: function (t, e) { return Math.abs(90 - Math.abs(t)) <= 90 - e ? "horizontal" : "vertical" } }, { key: "setContentPosition", value: function (t) { "transform" === this.props.scrollMode && (this.props.content.style.transform = "translate(".concat(-t.position.x, "px, ").concat(-t.position.y, "px)")), "native" === this.props.scrollMode && (this.props.viewport.scrollTop = t.position.y, this.props.viewport.scrollLeft = t.position.x) } }, { key: "handleEvents", value: function () { var t = this, e = { x: 0, y: 0 }, i = { x: 0, y: 0 }, o = null, n = null, r = !1, s = function (n) { if (t.isDragging) { var s = r ? n.touches[0] : n, a = s.pageX, l = s.pageY, p = s.clientX, c = s.clientY; t.dragOffset.x = a - e.x, t.dragOffset.y = l - e.y, t.clientOffset.x = p - i.x, t.clientOffset.y = c - i.y, (Math.abs(t.clientOffset.x) > 5 && !o || Math.abs(t.clientOffset.y) > 5 && !o) && (o = t.getDragDirection(t.getDragAngle(t.clientOffset.x, t.clientOffset.y), t.props.dragDirectionTolerance)), t.props.lockScrollOnDragDirection && "all" !== t.props.lockScrollOnDragDirection ? o === t.props.lockScrollOnDragDirection && r ? (t.dragPosition.x = t.dragStartPosition.x + t.dragOffset.x, t.dragPosition.y = t.dragStartPosition.y + t.dragOffset.y) : r ? (t.dragPosition.x = t.dragStartPosition.x, t.dragPosition.y = t.dragStartPosition.y) : (t.dragPosition.x = t.dragStartPosition.x + t.dragOffset.x, t.dragPosition.y = t.dragStartPosition.y + t.dragOffset.y) : (t.dragPosition.x = t.dragStartPosition.x + t.dragOffset.x, t.dragPosition.y = t.dragStartPosition.y + t.dragOffset.y) } }; this.events.pointerdown = function (o) { r = !(!o.touches || !o.touches[0]), t.props.onPointerDown(t.getState(), o, r); var n = r ? o.touches[0] : o, a = n.pageX, l = n.pageY, p = n.clientX, c = n.clientY, h = t.props.viewport, u = h.getBoundingClientRect(); if (!(p - u.left >= h.clientLeft + h.clientWidth) && !(c - u.top >= h.clientTop + h.clientHeight) && t.props.shouldScroll(t.getState(), o) && 2 !== o.button && ("mouse" !== t.props.pointerMode || !r) && ("touch" !== t.props.pointerMode || r) && !(t.props.inputsFocus && ["input", "textarea", "button", "select", "label"].indexOf(o.target.nodeName.toLowerCase()) > -1)) { if (t.props.textSelection) { if (function (t, e, i) { for (var o = t.childNodes, n = document.createRange(), r = 0; r < o.length; r++) { var s = o[r]; if (3 === s.nodeType) { n.selectNodeContents(s); var a = n.getBoundingClientRect(); if (e >= a.left && i >= a.top && e <= a.right && i <= a.bottom) return s } } return !1 }(o.target, p, c)) return; (f = window.getSelection ? window.getSelection() : document.selection) && (f.removeAllRanges ? f.removeAllRanges() : f.empty && f.empty()) } var f; t.isDragging = !0, e.x = a, e.y = l, i.x = p, i.y = c, t.dragStartPosition.x = t.position.x, t.dragStartPosition.y = t.position.y, s(o), t.startAnimationLoop(), !r && t.props.pointerDownPreventDefault && o.preventDefault() } }, this.events.pointermove = function (e) { !e.cancelable || "all" !== t.props.lockScrollOnDragDirection && t.props.lockScrollOnDragDirection !== o || e.preventDefault(), s(e), t.props.onPointerMove(t.getState(), e, r) }, this.events.pointerup = function (e) { t.isDragging = !1, o = null, t.props.onPointerUp(t.getState(), e, r) }, this.events.wheel = function (e) { var i = t.getState(); t.props.emulateScroll && (t.velocity.x = 0, t.velocity.y = 0, t.isScrolling = !0, t.scrollOffset.x = -e.deltaX, t.scrollOffset.y = -e.deltaY, t.props.onWheel(i, e), t.startAnimationLoop(), clearTimeout(n), n = setTimeout((function () { return t.isScrolling = !1 }), 80), t.props.preventDefaultOnEmulateScroll && t.getDragDirection(t.getDragAngle(-e.deltaX, -e.deltaY), t.props.dragDirectionTolerance) === t.props.preventDefaultOnEmulateScroll && e.preventDefault()) }, this.events.scroll = function () { var e = t.props.viewport, i = e.scrollLeft, o = e.scrollTop; Math.abs(t.position.x + i) > 3 && (t.position.x = -i, t.velocity.x = 0), Math.abs(t.position.y + o) > 3 && (t.position.y = -o, t.velocity.y = 0) }, this.events.click = function (e) { var i = t.getState(), o = "vertical" !== t.props.direction ? i.dragOffset.x : 0, n = "horizontal" !== t.props.direction ? i.dragOffset.y : 0; Math.max(Math.abs(o), Math.abs(n)) > 5 && (e.preventDefault(), e.stopPropagation()), t.props.onClick(i, e, r) }, this.events.contentLoad = function () { return t.updateMetrics() }, this.events.resize = function () { return t.updateMetrics() }, this.props.viewport.addEventListener("mousedown", this.events.pointerdown), this.props.viewport.addEventListener("touchstart", this.events.pointerdown, { passive: !1 }), this.props.viewport.addEventListener("click", this.events.click), this.props.viewport.addEventListener("wheel", this.events.wheel, { passive: !1 }), this.props.viewport.addEventListener("scroll", this.events.scroll), this.props.content.addEventListener("load", this.events.contentLoad, !0), window.addEventListener("mousemove", this.events.pointermove), window.addEventListener("touchmove", this.events.pointermove, { passive: !1 }), window.addEventListener("mouseup", this.events.pointerup), window.addEventListener("touchend", this.events.pointerup), window.addEventListener("resize", this.events.resize) } }, { key: "destroy", value: function () { this.props.viewport.removeEventListener("mousedown", this.events.pointerdown), this.props.viewport.removeEventListener("touchstart", this.events.pointerdown), this.props.viewport.removeEventListener("click", this.events.click), this.props.viewport.removeEventListener("wheel", this.events.wheel), this.props.viewport.removeEventListener("scroll", this.events.scroll), this.props.content.removeEventListener("load", this.events.contentLoad), window.removeEventListener("mousemove", this.events.pointermove), window.removeEventListener("touchmove", this.events.pointermove), window.removeEventListener("mouseup", this.events.pointerup), window.removeEventListener("touchend", this.events.pointerup), window.removeEventListener("resize", this.events.resize) } }]) && a(e.prototype, i), o && a(e, o), t }() }]).default })); var scrollElementExists = document.getElementById("line_ww_f09e025432ab2");; if (scrollElementExists !== null) { var scww_f09e025432ab2 = new ScrollBooster({ viewport: document.getElementById("line_ww_f09e025432ab2"), content: document.getElementById("line_inner_ww_f09e025432ab2"), direction: "horizontal", scrollMode: "transform" }); }; function moveww_f09e025432ab2(direction) { var itemWidth = 59; var pos = scww_f09e025432ab2.getState(); var currentPosition = (Math.floor(pos["position"]["x"] / itemWidth) * itemWidth); if (direction === "right") { var maxPosition = scww_f09e025432ab2.edgeX["from"] * -1; var newPosition = currentPosition + (3 * itemWidth); if (newPosition > maxPosition) { newPosition = maxPosition; } } else { var newPosition = currentPosition - (3 * itemWidth); if (newPosition < 0) { newPosition = 0; } } var t = scww_f09e025432ab2.scrollTo({ x: newPosition }); }; 'use strict'; (function (root, factory) { if (typeof define === "function" && define.amd) { define(factory) } else if (typeof exports === "object") { module.exports = factory() } else { root.ResizeSensor = factory() } }(typeof window !== 'undefined' ? window : this, function () {
+    if (typeof window === "undefined") { return null }
+    var globalWindow = typeof window != 'undefined' && window.Math == Math ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')(); var requestAnimationFrame = globalWindow.requestAnimationFrame || globalWindow.mozRequestAnimationFrame || globalWindow.webkitRequestAnimationFrame || function (fn) { return globalWindow.setTimeout(fn, 20) }; function forEachElement(elements, callback) { var elementsType = Object.prototype.toString.call(elements); var isCollectionTyped = ('[object Array]' === elementsType || ('[object NodeList]' === elementsType) || ('[object HTMLCollection]' === elementsType) || ('[object Object]' === elementsType) || ('undefined' !== typeof jQuery && elements instanceof jQuery) || ('undefined' !== typeof Elements && elements instanceof Elements)); var i = 0, j = elements.length; if (isCollectionTyped) { for (; i < j; i++) { callback(elements[i]) } } else { callback(elements) } }
+    function getElementSize(element) {
+        if (!element.getBoundingClientRect) { return { width: element.offsetWidth, height: element.offsetHeight } }
+        var rect = element.getBoundingClientRect(); return { width: Math.round(rect.width), height: Math.round(rect.height) }
+    }
+    function setStyle(element, style) { Object.keys(style).forEach(function (key) { element.style[key] = style[key] }) }
+    var ResizeSensor = function (element, callback) {
+        function EventQueue() {
+            var q = []; this.add = function (ev) { q.push(ev) }; var i, j; this.call = function (sizeInfo) { for (i = 0, j = q.length; i < j; i++) { q[i].call(this, sizeInfo) } }; this.remove = function (ev) {
+                var newQueue = []; for (i = 0, j = q.length; i < j; i++) { if (q[i] !== ev) newQueue.push(q[i]) }
+                q = newQueue
+            }; this.length = function () { return q.length }
+        }
+        function attachResizeEvent(element, resized) {
+            if (!element) return; if (element.resizedAttached) { element.resizedAttached.add(resized); return }
+            element.resizedAttached = new EventQueue(); element.resizedAttached.add(resized); element.resizeSensor = document.createElement('div'); element.resizeSensor.dir = 'ltr'; element.resizeSensor.className = 'resize-sensor'; var style = { pointerEvents: 'none', position: 'absolute', left: '0px', top: '0px', right: '0px', bottom: '0px', overflow: 'hidden', zIndex: '-1', visibility: 'hidden', maxWidth: '100%' }; var styleChild = { position: 'absolute', left: '0px', top: '0px', transition: '0s', }; setStyle(element.resizeSensor, style); var expand = document.createElement('div'); expand.className = 'resize-sensor-expand'; setStyle(expand, style); var expandChild = document.createElement('div'); setStyle(expandChild, styleChild); expand.appendChild(expandChild); var shrink = document.createElement('div'); shrink.className = 'resize-sensor-shrink'; setStyle(shrink, style); var shrinkChild = document.createElement('div'); setStyle(shrinkChild, styleChild); setStyle(shrinkChild, { width: '200%', height: '200%' }); shrink.appendChild(shrinkChild); element.resizeSensor.appendChild(expand); element.resizeSensor.appendChild(shrink); element.appendChild(element.resizeSensor); var computedStyle = window.getComputedStyle(element); var position = computedStyle ? computedStyle.getPropertyValue('position') : null; if ('absolute' !== position && 'relative' !== position && 'fixed' !== position) { element.style.position = 'relative' }
+            var dirty, rafId; var size = getElementSize(element); var lastWidth = 0; var lastHeight = 0; var initialHiddenCheck = !0; var lastAnimationFrame = 0; var resetExpandShrink = function () { var width = element.offsetWidth; var height = element.offsetHeight; expandChild.style.width = (width + 10) + 'px'; expandChild.style.height = (height + 10) + 'px'; expand.scrollLeft = width + 10; expand.scrollTop = height + 10; shrink.scrollLeft = width + 10; shrink.scrollTop = height + 10 }; var reset = function () {
+                if (initialHiddenCheck) {
+                    var invisible = element.offsetWidth === 0 && element.offsetHeight === 0; if (invisible) {
+                        if (!lastAnimationFrame) { lastAnimationFrame = requestAnimationFrame(function () { lastAnimationFrame = 0; reset() }) }
+                        return
+                    } else { initialHiddenCheck = !1 }
                 }
+                resetExpandShrink()
+            }; element.resizeSensor.resetSensor = reset; var onResized = function () { rafId = 0; if (!dirty) return; lastWidth = size.width; lastHeight = size.height; if (element.resizedAttached) { element.resizedAttached.call(size) } }; var onScroll = function () {
+                size = getElementSize(element); dirty = size.width !== lastWidth || size.height !== lastHeight; if (dirty && !rafId) { rafId = requestAnimationFrame(onResized) }
+                reset()
+            }; var addEvent = function (el, name, cb) { if (el.attachEvent) { el.attachEvent('on' + name, cb) } else { el.addEventListener(name, cb) } }; addEvent(expand, 'scroll', onScroll); addEvent(shrink, 'scroll', onScroll); requestAnimationFrame(reset)
+        }
+        forEachElement(element, function (elem) { attachResizeEvent(elem, callback) }); this.detach = function (ev) { ResizeSensor.detach(element, ev) }; this.reset = function () { element.resizeSensor.resetSensor() }
+    }; ResizeSensor.reset = function (element) { forEachElement(element, function (elem) { elem.resizeSensor.resetSensor() }) }; ResizeSensor.detach = function (element, ev) {
+        forEachElement(element, function (elem) {
+            if (!elem) return; if (elem.resizedAttached && typeof ev === "function") { elem.resizedAttached.remove(ev); if (elem.resizedAttached.length()) return }
+            if (elem.resizeSensor) {
+                if (elem.contains(elem.resizeSensor)) { elem.removeChild(elem.resizeSensor) }
+                delete elem.resizeSensor; delete elem.resizedAttached
             }
-        });
-
-    });
-
-    /********************** Social Share buttons ***********************/
-    var share_bar = document.getElementsByClassName('share-bar');
-    var po = document.createElement('script');
-    po.type = 'text/javascript';
-    po.async = true;
-    po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(po, s);
-
-    for (var i = 0; i < share_bar.length; i++) {
-        var html = '<iframe allowtransparency="true" frameborder="0" scrolling="no"' +
-            'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=ramswarooppatra&amp;hashtags=ramandantara&amp;count=horizontal"' +
-            'style="width:105px; height:21px;">' +
-            '</iframe>' +
-
-            '<iframe src="//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(window.location) + '&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=101094500229731&amp;width=150" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>' +
-
-            '<div class="g-plusone" data-size="medium"></div>';
-
-        // '<iframe src="https://plusone.google.com/_/+1/fastbutton?bsv&amp;size=medium&amp;url=' + encodeURIComponent(window.location) + '" allowtransparency="true" frameborder="0" scrolling="no" title="+1" style="width:105px; height:21px;"></iframe>';
-
-        share_bar[i].innerHTML = html;
-        share_bar[i].style.display = 'inline-block';
-    }
-
-    /********************** Embed youtube video *********************/
-    $('.player').YTPlayer();
-
-
-    /********************** Toggle Map Content **********************/
-    $('#btn-show-map').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
-    });
-    $('#btn-show-content').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
-    });
-
-    /********************** Add to Calendar **********************/
-    var myCalendar = createCalendar({
-        options: {
-            class: '',
-            // You can pass an ID. If you don't, one will be generated for you
-            id: ''
-        },
-        data: {
-            // Event title
-            title: "Bodorrio de Tatis y Chávez",
-
-            // Event start date
-            start: new Date('Feb 15, 2025 13:30'),
-
-            // Event duration (IN MINUTES)
-            // duration: 120,
-
-            // You can also choose to set an end time
-            // If an end time is set, this will take precedence over duration
-            end: new Date('Feb 15, 2025 22:00'),
-
-            // Event Address
-            address: 'Jardin Bellagio Ags, Chasela 203 Arboledas de Paso Blanco, 20907 aguascalientes, Ags.',
-
-            // Event Description
-            description: "No podemos esperar por verte en nuestro gran dia, para cualquier consulta, por favor contacta a Tatis"
+        })
+    }; if (typeof MutationObserver !== "undefined") { var observer = new MutationObserver(function (mutations) { for (var i in mutations) { if (mutations.hasOwnProperty(i)) { var items = mutations[i].addedNodes; for (var j = 0; j < items.length; j++) { if (items[j].resizeSensor) { ResizeSensor.reset(items[j]) } } } } }); document.addEventListener("DOMContentLoaded", function (event) { observer.observe(document.body, { childList: !0, subtree: !0, }) }) }
+    return ResizeSensor
+})); 'use strict'; (function (root, factory) { if (typeof define === "function" && define.amd) { define(['./ResizeSensor.js'], factory) } else if (typeof exports === "object") { module.exports = factory(require('./ResizeSensor.js')) } else { root.ElementQueries = factory(root.ResizeSensor); root.ElementQueries.listen() } }(typeof window !== 'undefined' ? window : this, function (ResizeSensor) {
+    var ElementQueries = function () {
+        var cssStyleElement; var allQueries = {}; var idToSelectorMapping = []; function getEmSize(element) {
+            if (!element) { element = document.documentElement }
+            var fontSize = window.getComputedStyle(element, null).fontSize; return parseFloat(fontSize) || 16
         }
-    });
-
-    $('#add-to-cal').html(myCalendar);
-
-
-    /********************** RSVP **********************/
-    $('#rsvp-form').on('submit', function (e) {
-        e.preventDefault();
-        var data = $(this).serialize();
-
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
-
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
-        } else {
-            $.post('https://script.google.com/macros/s/AKfycbwaqHslEwT9HZpxGN8Y1zqhxXIvp39CL3os8WD2uUW9EbZYGX1EiSP5cHkobPJlHQgq9A/exec', data)
-                .done(function (data) {
-                    console.log(data);
-                    if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
-                    } else {
-                        $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-                    }
-                })
-                .fail(function (data) {
-                    console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
-                });
+        function getElementSize(element) {
+            if (!element.getBoundingClientRect) { return { width: element.offsetWidth, height: element.offsetHeight } }
+            var rect = element.getBoundingClientRect(); return { width: Math.round(rect.width), height: Math.round(rect.height) }
         }
-    });
-
-});
-
-/********************** Extras **********************/
-
-// Google map
-function initMap() {
-    var location = {lat: 21.962476449350714, lng: -102.3014303258373};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: location,
-        scrollwheel: false
-    });
-
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
-}
-
-function initBBSRMap() {
-    var la_fiesta = {lat: 21.962476449350714, lng: -102.3014303258373};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: la_fiesta,
-        scrollwheel: false
-    });
-
-    var marker = new google.maps.Marker({
-        position: la_fiesta,
-        map: map
-    });
-}
-
-// alert_markup
-function alert_markup(alert_type, msg) {
-    return '<div class="alert alert-' + alert_type + '" role="alert">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button></div>';
-}
-
-// MD5 Encoding
-var MD5 = function (string) {
-
-    function RotateLeft(lValue, iShiftBits) {
-        return (lValue << iShiftBits) | (lValue >>> (32 - iShiftBits));
-    }
-
-    function AddUnsigned(lX, lY) {
-        var lX4, lY4, lX8, lY8, lResult;
-        lX8 = (lX & 0x80000000);
-        lY8 = (lY & 0x80000000);
-        lX4 = (lX & 0x40000000);
-        lY4 = (lY & 0x40000000);
-        lResult = (lX & 0x3FFFFFFF) + (lY & 0x3FFFFFFF);
-        if (lX4 & lY4) {
-            return (lResult ^ 0x80000000 ^ lX8 ^ lY8);
-        }
-        if (lX4 | lY4) {
-            if (lResult & 0x40000000) {
-                return (lResult ^ 0xC0000000 ^ lX8 ^ lY8);
-            } else {
-                return (lResult ^ 0x40000000 ^ lX8 ^ lY8);
+        function convertToPx(element, value) { var numbers = value.split(/\d/); var units = numbers[numbers.length - 1]; value = parseFloat(value); switch (units) { case "px": return value; case "em": return value * getEmSize(element); case "rem": return value * getEmSize(); case "vw": return value * document.documentElement.clientWidth / 100; case "vh": return value * document.documentElement.clientHeight / 100; case "vmin": case "vmax": var vw = document.documentElement.clientWidth / 100; var vh = document.documentElement.clientHeight / 100; var chooser = Math[units === "vmin" ? "min" : "max"]; return value * chooser(vw, vh); default: return value } }
+        function SetupInformation(element, id) {
+            this.element = element; var key, option, elementSize, value, actualValue, attrValues, attrValue, attrName; var attributes = ['min-width', 'min-height', 'max-width', 'max-height']; this.call = function () {
+                elementSize = getElementSize(this.element); attrValues = {}; for (key in allQueries[id]) {
+                    if (!allQueries[id].hasOwnProperty(key)) { continue }
+                    option = allQueries[id][key]; value = convertToPx(this.element, option.value); actualValue = option.property === 'width' ? elementSize.width : elementSize.height; attrName = option.mode + '-' + option.property; attrValue = ''; if (option.mode === 'min' && actualValue >= value) { attrValue += option.value }
+                    if (option.mode === 'max' && actualValue <= value) { attrValue += option.value }
+                    if (!attrValues[attrName]) attrValues[attrName] = ''; if (attrValue && -1 === (' ' + attrValues[attrName] + ' ').indexOf(' ' + attrValue + ' ')) { attrValues[attrName] += ' ' + attrValue }
+                }
+                for (var k in attributes) { if (!attributes.hasOwnProperty(k)) continue; if (attrValues[attributes[k]]) { this.element.setAttribute(attributes[k], attrValues[attributes[k]].substr(1)) } else { this.element.removeAttribute(attributes[k]) } }
             }
-        } else {
-            return (lResult ^ lX8 ^ lY8);
         }
-    }
-
-    function F(x, y, z) {
-        return (x & y) | ((~x) & z);
-    }
-
-    function G(x, y, z) {
-        return (x & z) | (y & (~z));
-    }
-
-    function H(x, y, z) {
-        return (x ^ y ^ z);
-    }
-
-    function I(x, y, z) {
-        return (y ^ (x | (~z)));
-    }
-
-    function FF(a, b, c, d, x, s, ac) {
-        a = AddUnsigned(a, AddUnsigned(AddUnsigned(F(b, c, d), x), ac));
-        return AddUnsigned(RotateLeft(a, s), b);
-    };
-
-    function GG(a, b, c, d, x, s, ac) {
-        a = AddUnsigned(a, AddUnsigned(AddUnsigned(G(b, c, d), x), ac));
-        return AddUnsigned(RotateLeft(a, s), b);
-    };
-
-    function HH(a, b, c, d, x, s, ac) {
-        a = AddUnsigned(a, AddUnsigned(AddUnsigned(H(b, c, d), x), ac));
-        return AddUnsigned(RotateLeft(a, s), b);
-    };
-
-    function II(a, b, c, d, x, s, ac) {
-        a = AddUnsigned(a, AddUnsigned(AddUnsigned(I(b, c, d), x), ac));
-        return AddUnsigned(RotateLeft(a, s), b);
-    };
-
-    function ConvertToWordArray(string) {
-        var lWordCount;
-        var lMessageLength = string.length;
-        var lNumberOfWords_temp1 = lMessageLength + 8;
-        var lNumberOfWords_temp2 = (lNumberOfWords_temp1 - (lNumberOfWords_temp1 % 64)) / 64;
-        var lNumberOfWords = (lNumberOfWords_temp2 + 1) * 16;
-        var lWordArray = Array(lNumberOfWords - 1);
-        var lBytePosition = 0;
-        var lByteCount = 0;
-        while (lByteCount < lMessageLength) {
-            lWordCount = (lByteCount - (lByteCount % 4)) / 4;
-            lBytePosition = (lByteCount % 4) * 8;
-            lWordArray[lWordCount] = (lWordArray[lWordCount] | (string.charCodeAt(lByteCount) << lBytePosition));
-            lByteCount++;
+        function setupElement(element, id) {
+            if (!element.elementQueriesSetupInformation) { element.elementQueriesSetupInformation = new SetupInformation(element, id) }
+            if (!element.elementQueriesSensor) { element.elementQueriesSensor = new ResizeSensor(element, function () { element.elementQueriesSetupInformation.call() }) }
         }
-        lWordCount = (lByteCount - (lByteCount % 4)) / 4;
-        lBytePosition = (lByteCount % 4) * 8;
-        lWordArray[lWordCount] = lWordArray[lWordCount] | (0x80 << lBytePosition);
-        lWordArray[lNumberOfWords - 2] = lMessageLength << 3;
-        lWordArray[lNumberOfWords - 1] = lMessageLength >>> 29;
-        return lWordArray;
-    };
-
-    function WordToHex(lValue) {
-        var WordToHexValue = "", WordToHexValue_temp = "", lByte, lCount;
-        for (lCount = 0; lCount <= 3; lCount++) {
-            lByte = (lValue >>> (lCount * 8)) & 255;
-            WordToHexValue_temp = "0" + lByte.toString(16);
-            WordToHexValue = WordToHexValue + WordToHexValue_temp.substr(WordToHexValue_temp.length - 2, 2);
+        function queueQuery(selector, mode, property, value) {
+            if (typeof (allQueries[selector]) === 'undefined') { allQueries[selector] = []; var id = idToSelectorMapping.length; cssStyleElement.innerHTML += '\n' + selector + ' {animation: 0.1s element-queries;}'; cssStyleElement.innerHTML += '\n' + selector + ' > .resize-sensor {min-width: ' + id + 'px;}'; idToSelectorMapping.push(selector) }
+            allQueries[selector].push({ mode: mode, property: property, value: value })
         }
-        return WordToHexValue;
-    };
-
-    function Utf8Encode(string) {
-        string = string.replace(/\r\n/g, "\n");
-        var utftext = "";
-
-        for (var n = 0; n < string.length; n++) {
-
-            var c = string.charCodeAt(n);
-
-            if (c < 128) {
-                utftext += String.fromCharCode(c);
+        function getQuery(container) {
+            var query; if (document.querySelectorAll) query = (container) ? container.querySelectorAll.bind(container) : document.querySelectorAll.bind(document); if (!query && 'undefined' !== typeof $$) query = $$; if (!query && 'undefined' !== typeof jQuery) query = jQuery; if (!query) { throw 'No document.querySelectorAll, jQuery or Mootools\'s $$ found.' }
+            return query
+        }
+        function findElementQueriesElements(container) { var query = getQuery(container); for (var selector in allQueries) if (allQueries.hasOwnProperty(selector)) { var elements = query(selector, container); for (var i = 0, j = elements.length; i < j; i++) { setupElement(elements[i], selector) } } }
+        function attachResponsiveImage(element) {
+            var children = []; var rules = []; var sources = []; var defaultImageId = 0; var lastActiveImage = -1; var loadedImages = []; for (var i in element.children) { if (!element.children.hasOwnProperty(i)) continue; if (element.children[i].tagName && element.children[i].tagName.toLowerCase() === 'img') { children.push(element.children[i]); var minWidth = element.children[i].getAttribute('min-width') || element.children[i].getAttribute('data-min-width'); var src = element.children[i].getAttribute('data-src') || element.children[i].getAttribute('url'); sources.push(src); var rule = { minWidth: minWidth }; rules.push(rule); if (!minWidth) { defaultImageId = children.length - 1; element.children[i].style.display = 'block' } else { element.children[i].style.display = 'none' } } }
+            lastActiveImage = defaultImageId; function check() {
+                var imageToDisplay = !1, i; for (i in children) { if (!children.hasOwnProperty(i)) continue; if (rules[i].minWidth) { if (element.offsetWidth > rules[i].minWidth) { imageToDisplay = i } } }
+                if (!imageToDisplay) { imageToDisplay = defaultImageId }
+                if (lastActiveImage !== imageToDisplay) { if (!loadedImages[imageToDisplay]) { var image = new Image(); image.onload = function () { children[imageToDisplay].src = sources[imageToDisplay]; children[lastActiveImage].style.display = 'none'; children[imageToDisplay].style.display = 'block'; loadedImages[imageToDisplay] = !0; lastActiveImage = imageToDisplay }; image.src = sources[imageToDisplay] } else { children[lastActiveImage].style.display = 'none'; children[imageToDisplay].style.display = 'block'; lastActiveImage = imageToDisplay } } else { children[imageToDisplay].src = sources[imageToDisplay] }
             }
-            else if ((c > 127) && (c < 2048)) {
-                utftext += String.fromCharCode((c >> 6) | 192);
-                utftext += String.fromCharCode((c & 63) | 128);
-            }
-            else {
-                utftext += String.fromCharCode((c >> 12) | 224);
-                utftext += String.fromCharCode(((c >> 6) & 63) | 128);
-                utftext += String.fromCharCode((c & 63) | 128);
-            }
-
+            element.resizeSensorInstance = new ResizeSensor(element, check); check()
         }
-
-        return utftext;
-    };
-
-    var x = Array();
-    var k, AA, BB, CC, DD, a, b, c, d;
-    var S11 = 7, S12 = 12, S13 = 17, S14 = 22;
-    var S21 = 5, S22 = 9, S23 = 14, S24 = 20;
-    var S31 = 4, S32 = 11, S33 = 16, S34 = 23;
-    var S41 = 6, S42 = 10, S43 = 15, S44 = 21;
-
-    string = Utf8Encode(string);
-
-    x = ConvertToWordArray(string);
-
-    a = 0x67452301;
-    b = 0xEFCDAB89;
-    c = 0x98BADCFE;
-    d = 0x10325476;
-
-    for (k = 0; k < x.length; k += 16) {
-        AA = a;
-        BB = b;
-        CC = c;
-        DD = d;
-        a = FF(a, b, c, d, x[k + 0], S11, 0xD76AA478);
-        d = FF(d, a, b, c, x[k + 1], S12, 0xE8C7B756);
-        c = FF(c, d, a, b, x[k + 2], S13, 0x242070DB);
-        b = FF(b, c, d, a, x[k + 3], S14, 0xC1BDCEEE);
-        a = FF(a, b, c, d, x[k + 4], S11, 0xF57C0FAF);
-        d = FF(d, a, b, c, x[k + 5], S12, 0x4787C62A);
-        c = FF(c, d, a, b, x[k + 6], S13, 0xA8304613);
-        b = FF(b, c, d, a, x[k + 7], S14, 0xFD469501);
-        a = FF(a, b, c, d, x[k + 8], S11, 0x698098D8);
-        d = FF(d, a, b, c, x[k + 9], S12, 0x8B44F7AF);
-        c = FF(c, d, a, b, x[k + 10], S13, 0xFFFF5BB1);
-        b = FF(b, c, d, a, x[k + 11], S14, 0x895CD7BE);
-        a = FF(a, b, c, d, x[k + 12], S11, 0x6B901122);
-        d = FF(d, a, b, c, x[k + 13], S12, 0xFD987193);
-        c = FF(c, d, a, b, x[k + 14], S13, 0xA679438E);
-        b = FF(b, c, d, a, x[k + 15], S14, 0x49B40821);
-        a = GG(a, b, c, d, x[k + 1], S21, 0xF61E2562);
-        d = GG(d, a, b, c, x[k + 6], S22, 0xC040B340);
-        c = GG(c, d, a, b, x[k + 11], S23, 0x265E5A51);
-        b = GG(b, c, d, a, x[k + 0], S24, 0xE9B6C7AA);
-        a = GG(a, b, c, d, x[k + 5], S21, 0xD62F105D);
-        d = GG(d, a, b, c, x[k + 10], S22, 0x2441453);
-        c = GG(c, d, a, b, x[k + 15], S23, 0xD8A1E681);
-        b = GG(b, c, d, a, x[k + 4], S24, 0xE7D3FBC8);
-        a = GG(a, b, c, d, x[k + 9], S21, 0x21E1CDE6);
-        d = GG(d, a, b, c, x[k + 14], S22, 0xC33707D6);
-        c = GG(c, d, a, b, x[k + 3], S23, 0xF4D50D87);
-        b = GG(b, c, d, a, x[k + 8], S24, 0x455A14ED);
-        a = GG(a, b, c, d, x[k + 13], S21, 0xA9E3E905);
-        d = GG(d, a, b, c, x[k + 2], S22, 0xFCEFA3F8);
-        c = GG(c, d, a, b, x[k + 7], S23, 0x676F02D9);
-        b = GG(b, c, d, a, x[k + 12], S24, 0x8D2A4C8A);
-        a = HH(a, b, c, d, x[k + 5], S31, 0xFFFA3942);
-        d = HH(d, a, b, c, x[k + 8], S32, 0x8771F681);
-        c = HH(c, d, a, b, x[k + 11], S33, 0x6D9D6122);
-        b = HH(b, c, d, a, x[k + 14], S34, 0xFDE5380C);
-        a = HH(a, b, c, d, x[k + 1], S31, 0xA4BEEA44);
-        d = HH(d, a, b, c, x[k + 4], S32, 0x4BDECFA9);
-        c = HH(c, d, a, b, x[k + 7], S33, 0xF6BB4B60);
-        b = HH(b, c, d, a, x[k + 10], S34, 0xBEBFBC70);
-        a = HH(a, b, c, d, x[k + 13], S31, 0x289B7EC6);
-        d = HH(d, a, b, c, x[k + 0], S32, 0xEAA127FA);
-        c = HH(c, d, a, b, x[k + 3], S33, 0xD4EF3085);
-        b = HH(b, c, d, a, x[k + 6], S34, 0x4881D05);
-        a = HH(a, b, c, d, x[k + 9], S31, 0xD9D4D039);
-        d = HH(d, a, b, c, x[k + 12], S32, 0xE6DB99E5);
-        c = HH(c, d, a, b, x[k + 15], S33, 0x1FA27CF8);
-        b = HH(b, c, d, a, x[k + 2], S34, 0xC4AC5665);
-        a = II(a, b, c, d, x[k + 0], S41, 0xF4292244);
-        d = II(d, a, b, c, x[k + 7], S42, 0x432AFF97);
-        c = II(c, d, a, b, x[k + 14], S43, 0xAB9423A7);
-        b = II(b, c, d, a, x[k + 5], S44, 0xFC93A039);
-        a = II(a, b, c, d, x[k + 12], S41, 0x655B59C3);
-        d = II(d, a, b, c, x[k + 3], S42, 0x8F0CCC92);
-        c = II(c, d, a, b, x[k + 10], S43, 0xFFEFF47D);
-        b = II(b, c, d, a, x[k + 1], S44, 0x85845DD1);
-        a = II(a, b, c, d, x[k + 8], S41, 0x6FA87E4F);
-        d = II(d, a, b, c, x[k + 15], S42, 0xFE2CE6E0);
-        c = II(c, d, a, b, x[k + 6], S43, 0xA3014314);
-        b = II(b, c, d, a, x[k + 13], S44, 0x4E0811A1);
-        a = II(a, b, c, d, x[k + 4], S41, 0xF7537E82);
-        d = II(d, a, b, c, x[k + 11], S42, 0xBD3AF235);
-        c = II(c, d, a, b, x[k + 2], S43, 0x2AD7D2BB);
-        b = II(b, c, d, a, x[k + 9], S44, 0xEB86D391);
-        a = AddUnsigned(a, AA);
-        b = AddUnsigned(b, BB);
-        c = AddUnsigned(c, CC);
-        d = AddUnsigned(d, DD);
-    }
-
-    var temp = WordToHex(a) + WordToHex(b) + WordToHex(c) + WordToHex(d);
-
-    return temp.toLowerCase();
-};
+        function findResponsiveImages() { var query = getQuery(); var elements = query('[data-responsive-image],[responsive-image]'); for (var i = 0, j = elements.length; i < j; i++) { attachResponsiveImage(elements[i]) } }
+        var regex = /,?[\s\t]*([^,\n]*?)((?:\[[\s\t]*?(?:min|max)-(?:width|height)[\s\t]*?[~$\^]?=[\s\t]*?"[^"]*?"[\s\t]*?])+)([^,\n\s\{]*)/mgi; var attrRegex = /\[[\s\t]*?(min|max)-(width|height)[\s\t]*?[~$\^]?=[\s\t]*?"([^"]*?)"[\s\t]*?]/mgi; function extractQuery(css) { var match, smatch, attrs, attrMatch; css = css.replace(/'/g, '"'); while (null !== (match = regex.exec(css))) { smatch = match[1] + match[3]; attrs = match[2]; while (null !== (attrMatch = attrRegex.exec(attrs))) { queueQuery(smatch, attrMatch[1], attrMatch[2], attrMatch[3]) } } }
+        function readRules(rules) {
+            var selector = ''; if (!rules) { return }
+            if ('string' === typeof rules) { rules = rules.toLowerCase(); if (-1 !== rules.indexOf('min-width') || -1 !== rules.indexOf('max-width')) { extractQuery(rules) } } else { for (var i = 0, j = rules.length; i < j; i++) { if (1 === rules[i].type) { selector = rules[i].selectorText || rules[i].cssText; if (-1 !== selector.indexOf('min-height') || -1 !== selector.indexOf('max-height')) { extractQuery(selector) } else if (-1 !== selector.indexOf('min-width') || -1 !== selector.indexOf('max-width')) { extractQuery(selector) } } else if (4 === rules[i].type) { readRules(rules[i].cssRules || rules[i].rules) } else if (3 === rules[i].type) { if (rules[i].styleSheet.hasOwnProperty("cssRules")) { readRules(rules[i].styleSheet.cssRules) } } } }
+        }
+        var defaultCssInjected = !1; this.init = function () {
+            var animationStart = 'animationstart'; if (typeof document.documentElement.style.webkitAnimationName !== 'undefined') { animationStart = 'webkitAnimationStart' } else if (typeof document.documentElement.style.MozAnimationName !== 'undefined') { animationStart = 'mozanimationstart' } else if (typeof document.documentElement.style.OAnimationName !== 'undefined') { animationStart = 'oanimationstart' }
+            document.body.addEventListener(animationStart, function (e) { var element = e.target; var styles = element && window.getComputedStyle(element, null); var animationName = styles && styles.getPropertyValue('animation-name'); var requiresSetup = animationName && (-1 !== animationName.indexOf('element-queries')); if (requiresSetup) { element.elementQueriesSensor = new ResizeSensor(element, function () { if (element.elementQueriesSetupInformation) { element.elementQueriesSetupInformation.call() } }); var sensorStyles = window.getComputedStyle(element.resizeSensor, null); var id = sensorStyles.getPropertyValue('min-width'); id = parseInt(id.replace('px', '')); setupElement(e.target, idToSelectorMapping[id]) } }); if (!defaultCssInjected) { cssStyleElement = document.createElement('style'); cssStyleElement.type = 'text/css'; cssStyleElement.innerHTML = '[responsive-image] > img, [data-responsive-image] {overflow: hidden; padding: 0; } [responsive-image] > img, [data-responsive-image] > img {width: 100%;}'; cssStyleElement.innerHTML += '\n@keyframes element-queries { 0% { visibility: inherit; } }'; document.getElementsByTagName('head')[0].appendChild(cssStyleElement); defaultCssInjected = !0 }
+            for (var i = 0, j = document.styleSheets.length; i < j; i++) {
+                try {
+                    if (document.styleSheets[i].href && 0 === document.styleSheets[i].href.indexOf('file://')) { console.warn("CssElementQueries: unable to parse local css files, " + document.styleSheets[i].href) }
+                    readRules(document.styleSheets[i].cssRules || document.styleSheets[i].rules || document.styleSheets[i].cssText)
+                } catch (e) { }
+            }
+            findResponsiveImages()
+        }; this.findElementQueriesElements = function (container) { findElementQueriesElements(container) }; this.update = function () { this.init() }
+    }; ElementQueries.update = function () { ElementQueries.instance.update() }; ElementQueries.detach = function (element) { if (element.elementQueriesSetupInformation) { element.elementQueriesSensor.detach(); delete element.elementQueriesSetupInformation; delete element.elementQueriesSensor } else if (element.resizeSensorInstance) { element.resizeSensorInstance.detach(); delete element.resizeSensorInstance } }; ElementQueries.init = function () {
+        if (!ElementQueries.instance) { ElementQueries.instance = new ElementQueries() }
+        ElementQueries.instance.init()
+    }; var domLoaded = function (callback) {
+        if (document.addEventListener) { document.addEventListener('DOMContentLoaded', callback, !1) }
+        else if (/KHTML|WebKit|iCab/i.test(navigator.userAgent)) { var DOMLoadTimer = setInterval(function () { if (/loaded|complete/i.test(document.readyState)) { callback(); clearInterval(DOMLoadTimer) } }, 10) }
+        else window.onload = callback
+    }; ElementQueries.findElementQueriesElements = function (container) { ElementQueries.instance.findElementQueriesElements(container) }; ElementQueries.listen = function () { domLoaded(ElementQueries.init) }; return ElementQueries
+})); if (typeof elementQueries !== "undefined") { } else { var elementQueries = new ElementQueries(); elementQueries.update(); };; elementQueries.update();
