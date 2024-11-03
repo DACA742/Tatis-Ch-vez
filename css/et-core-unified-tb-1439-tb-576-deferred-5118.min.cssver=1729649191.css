@@ -137,9 +137,10 @@ body.et_button_custom_icon #page-container .et_pb_button_0:after,body.et_button_
     padding-left: 31px!important
 }
 
+/* Color */
 .et_pb_section_3.et_pb_section {
     padding-bottom: 25px;
-    background-color: #faf2e9!important
+    background-color: rgba(209, 209, 209, 0.6)!important
 }
 
 .et_pb_row_4.et_pb_row {
@@ -198,8 +199,9 @@ body.et_button_custom_icon #page-container .et_pb_button_0:after,body.et_button_
     height: auto
 }
 
+/* Color Ceremonia recepcion */
 .et_pb_row_5 {
-    background-color: #ebdac8;
+    background-color: rgba(209, 209, 209, 0.6);
     border-color: #faf2e9;
     border-left-width: 205px
 }
@@ -237,13 +239,13 @@ body.et_button_custom_icon #page-container .et_pb_button_0:after,body.et_button_
 }
 
 body #page-container .et_pb_section .et_pb_button_2,body #page-container .et_pb_section .et_pb_button_3 {
-    color: #000000!important;
-    border-width: 2px!important;
+    color: #000000 !important;
+    border-width: 2px !important;
     border-color: #000000;
     border-radius: 60px;
     font-size: 10px;
-    font-weight: 700!important;
-    text-transform: uppercase!important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
     background-color: RGBA(255,255,255,0)
 }
 
@@ -252,8 +254,8 @@ body.et_button_custom_icon #page-container .et_pb_button_2:after,body.et_button_
 }
 
 .et_pb_row_6.et_pb_row {
-    margin-top: 70px!important;
-    margin-bottom: 35px!important
+    margin-top: 70px !important;
+    margin-bottom: 35px !important
 }
 
 .et_pb_row_6,body #page-container .et-db #et-boc .et-l .et_pb_row_6.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_6.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_6.et_pb_row {
@@ -1037,8 +1039,9 @@ div.et_pb_section.et_pb_section_8>.et_pb_background_pattern {
     border-right-width: 1px;
 }
 
+/* Color */
 .et_pb_column_26 {
-    background-color: #ebdac8;
+    background-color: rgba(255, 255, 255, 0.6);
     padding-top: 60px;
     padding-right: 60px;
     padding-bottom: 60px;
