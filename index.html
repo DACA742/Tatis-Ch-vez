@@ -7,7 +7,6 @@
 	<title>Invitación de Boda</title>	
     <link rel="stylesheet" id="dipl-timeline-item-style-css" href="css/timeline/style.css" type="text/css" media="all">
 	<!--<link rel="stylesheet" id="et-core-unified-5746-cached-inline-styles" href="https://invitaria.net/wp-content/et-cache/5746/et-core-unified-5746.min.css?ver=1729698792"> -->
-	<script src="js/scripts.js"></script>
 	<style id="divi-dynamic-critical-inline-css" type="text/css">
         @font-face {
             font-family: ETmodules;
@@ -1028,6 +1027,120 @@
     <link rel="stylesheet" id="divi-dynamic-css" href="css/et-divi-dynamic-5118.cssver=1729649191.css" as="style" media="all" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" id="legacy_animations-css" href="css/legacy_animations.cssver=6.6.2.css" type="text/css" media="all">
     <link rel="stylesheet" id="divi-dynamic-critical-inline-css" href="css/Inivitacion.css" type="text/css" media="all">
+
+        <script
+        type="text/javascript">; !function (t, e) { "object" == typeof exports && "object" == typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define("ScrollBooster", [], e) : "object" == typeof exports ? exports.ScrollBooster = e() : t.ScrollBooster = e() }(this, (function () { return function (t) { var e = {}; function i(o) { if (e[o]) return e[o].exports; var n = e[o] = { i: o, l: !1, exports: {} }; return t[o].call(n.exports, n, n.exports, i), n.l = !0, n.exports } return i.m = t, i.c = e, i.d = function (t, e, o) { i.o(t, e) || Object.defineProperty(t, e, { enumerable: !0, get: o }) }, i.r = function (t) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(t, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(t, "__esModule", { value: !0 }) }, i.t = function (t, e) { if (1 & e && (t = i(t)), 8 & e) return t; if (4 & e && "object" == typeof t && t && t.__esModule) return t; var o = Object.create(null); if (i.r(o), Object.defineProperty(o, "default", { enumerable: !0, value: t }), 2 & e && "string" != typeof t) for (var n in t) i.d(o, n, function (e) { return t[e] }.bind(null, n)); return o }, i.n = function (t) { var e = t && t.__esModule ? function () { return t.default } : function () { return t }; return i.d(e, "a", e), e }, i.o = function (t, e) { return Object.prototype.hasOwnProperty.call(t, e) }, i.p = "", i(i.s = 0) }([function (t, e, i) { "use strict"; function o(t, e) { var i = Object.keys(t); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(t); e && (o = o.filter((function (e) { return Object.getOwnPropertyDescriptor(t, e).enumerable }))), i.push.apply(i, o) } return i } function n(t) { for (var e = 1; e < arguments.length; e++) { var i = null != arguments[e] ? arguments[e] : {}; e % 2 ? o(Object(i), !0).forEach((function (e) { r(t, e, i[e]) })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(i)) : o(Object(i)).forEach((function (e) { Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(i, e)) })) } return t } function r(t, e, i) { return e in t ? Object.defineProperty(t, e, { value: i, enumerable: !0, configurable: !0, writable: !0 }) : t[e] = i, t } function s(t, e) { if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function") } function a(t, e) { for (var i = 0; i < e.length; i++) { var o = e[i]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(t, o.key, o) } } i.r(e), i.d(e, "default", (function () { return p })); var l = function (t) { return Math.max(t.offsetHeight, t.scrollHeight) }, p = function () { function t() { var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}; s(this, t); var i = { content: e.viewport.children[0], direction: "all", pointerMode: "all", scrollMode: void 0, bounce: !0, bounceForce: .1, friction: .05, textSelection: !1, inputsFocus: !0, emulateScroll: !1, preventDefaultOnEmulateScroll: !1, preventPointerMoveDefault: !0, lockScrollOnDragDirection: !1, pointerDownPreventDefault: !0, dragDirectionTolerance: 40, onPointerDown: function () { }, onPointerUp: function () { }, onPointerMove: function () { }, onClick: function () { }, onUpdate: function () { }, onWheel: function () { }, shouldScroll: function () { return !0 } }; if (this.props = n(n({}, i), e), this.props.viewport && this.props.viewport instanceof Element) if (this.props.content) { this.isDragging = !1, this.isTargetScroll = !1, this.isScrolling = !1, this.isRunning = !1; var o = { x: 0, y: 0 }; this.position = n({}, o), this.velocity = n({}, o), this.dragStartPosition = n({}, o), this.dragOffset = n({}, o), this.clientOffset = n({}, o), this.dragPosition = n({}, o), this.targetPosition = n({}, o), this.scrollOffset = n({}, o), this.rafID = null, this.events = {}, this.updateMetrics(), this.handleEvents() } else console.error("ScrollBooster init error: Viewport does not have any content"); else console.error('ScrollBooster init error: "viewport" config property must be present and must be Element') } var e, i, o; return e = t, (i = [{ key: "updateOptions", value: function () { var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}; this.props = n(n({}, this.props), t), this.props.onUpdate(this.getState()), this.startAnimationLoop() } }, { key: "updateMetrics", value: function () { var t; this.viewport = { width: this.props.viewport.clientWidth, height: this.props.viewport.clientHeight }, this.content = { width: (t = this.props.content, Math.max(t.offsetWidth, t.scrollWidth)), height: l(this.props.content) }, this.edgeX = { from: Math.min(-this.content.width + this.viewport.width, 0), to: 0 }, this.edgeY = { from: Math.min(-this.content.height + this.viewport.height, 0), to: 0 }, this.props.onUpdate(this.getState()), this.startAnimationLoop() } }, { key: "startAnimationLoop", value: function () { var t = this; this.isRunning = !0, cancelAnimationFrame(this.rafID), this.rafID = requestAnimationFrame((function () { return t.animate() })) } }, { key: "animate", value: function () { var t = this; if (this.isRunning) { this.updateScrollPosition(), this.isMoving() || (this.isRunning = !1, this.isTargetScroll = !1); var e = this.getState(); this.setContentPosition(e), this.props.onUpdate(e), this.rafID = requestAnimationFrame((function () { return t.animate() })) } } }, { key: "updateScrollPosition", value: function () { this.applyEdgeForce(), this.applyDragForce(), this.applyScrollForce(), this.applyTargetForce(); var t = 1 - this.props.friction; this.velocity.x *= t, this.velocity.y *= t, "vertical" !== this.props.direction && (this.position.x += this.velocity.x), "horizontal" !== this.props.direction && (this.position.y += this.velocity.y), this.props.bounce && !this.isScrolling || this.isTargetScroll || (this.position.x = Math.max(Math.min(this.position.x, this.edgeX.to), this.edgeX.from), this.position.y = Math.max(Math.min(this.position.y, this.edgeY.to), this.edgeY.from)) } }, { key: "applyForce", value: function (t) { this.velocity.x += t.x, this.velocity.y += t.y } }, { key: "applyEdgeForce", value: function () { if (this.props.bounce && !this.isDragging) { var t = this.position.x < this.edgeX.from, e = this.position.x > this.edgeX.to, i = this.position.y < this.edgeY.from, o = this.position.y > this.edgeY.to, n = t || e, r = i || o; if (n || r) { var s = t ? this.edgeX.from : this.edgeX.to, a = i ? this.edgeY.from : this.edgeY.to, l = s - this.position.x, p = a - this.position.y, c = { x: l * this.props.bounceForce, y: p * this.props.bounceForce }, h = this.position.x + (this.velocity.x + c.x) / this.props.friction, u = this.position.y + (this.velocity.y + c.y) / this.props.friction; (t && h >= this.edgeX.from || e && h <= this.edgeX.to) && (c.x = l * this.props.bounceForce - this.velocity.x), (i && u >= this.edgeY.from || o && u <= this.edgeY.to) && (c.y = p * this.props.bounceForce - this.velocity.y), this.applyForce({ x: n ? c.x : 0, y: r ? c.y : 0 }) } } } }, { key: "applyDragForce", value: function () { if (this.isDragging) { var t = this.dragPosition.x - this.position.x, e = this.dragPosition.y - this.position.y; this.applyForce({ x: t - this.velocity.x, y: e - this.velocity.y }) } } }, { key: "applyScrollForce", value: function () { this.isScrolling && (this.applyForce({ x: this.scrollOffset.x - this.velocity.x, y: this.scrollOffset.y - this.velocity.y }), this.scrollOffset.x = 0, this.scrollOffset.y = 0) } }, { key: "applyTargetForce", value: function () { this.isTargetScroll && this.applyForce({ x: .08 * (this.targetPosition.x - this.position.x) - this.velocity.x, y: .08 * (this.targetPosition.y - this.position.y) - this.velocity.y }) } }, { key: "isMoving", value: function () { return this.isDragging || this.isScrolling || Math.abs(this.velocity.x) >= .01 || Math.abs(this.velocity.y) >= .01 } }, { key: "scrollTo", value: function () { var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}; this.isTargetScroll = !0, this.targetPosition.x = -t.x || 0, this.targetPosition.y = -t.y || 0, this.startAnimationLoop() } }, { key: "setPosition", value: function () { var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {}; this.velocity.x = 0, this.velocity.y = 0, this.position.x = -t.x || 0, this.position.y = -t.y || 0, this.startAnimationLoop() } }, { key: "getState", value: function () { return { isMoving: this.isMoving(), isDragging: !(!this.dragOffset.x && !this.dragOffset.y), position: { x: -this.position.x, y: -this.position.y }, dragOffset: this.dragOffset, dragAngle: this.getDragAngle(this.clientOffset.x, this.clientOffset.y), borderCollision: { left: this.position.x >= this.edgeX.to, right: this.position.x <= this.edgeX.from, top: this.position.y >= this.edgeY.to, bottom: this.position.y <= this.edgeY.from } } } }, { key: "getDragAngle", value: function (t, e) { return Math.round(Math.atan2(t, e) * (180 / Math.PI)) } }, { key: "getDragDirection", value: function (t, e) { return Math.abs(90 - Math.abs(t)) <= 90 - e ? "horizontal" : "vertical" } }, { key: "setContentPosition", value: function (t) { "transform" === this.props.scrollMode && (this.props.content.style.transform = "translate(".concat(-t.position.x, "px, ").concat(-t.position.y, "px)")), "native" === this.props.scrollMode && (this.props.viewport.scrollTop = t.position.y, this.props.viewport.scrollLeft = t.position.x) } }, { key: "handleEvents", value: function () { var t = this, e = { x: 0, y: 0 }, i = { x: 0, y: 0 }, o = null, n = null, r = !1, s = function (n) { if (t.isDragging) { var s = r ? n.touches[0] : n, a = s.pageX, l = s.pageY, p = s.clientX, c = s.clientY; t.dragOffset.x = a - e.x, t.dragOffset.y = l - e.y, t.clientOffset.x = p - i.x, t.clientOffset.y = c - i.y, (Math.abs(t.clientOffset.x) > 5 && !o || Math.abs(t.clientOffset.y) > 5 && !o) && (o = t.getDragDirection(t.getDragAngle(t.clientOffset.x, t.clientOffset.y), t.props.dragDirectionTolerance)), t.props.lockScrollOnDragDirection && "all" !== t.props.lockScrollOnDragDirection ? o === t.props.lockScrollOnDragDirection && r ? (t.dragPosition.x = t.dragStartPosition.x + t.dragOffset.x, t.dragPosition.y = t.dragStartPosition.y + t.dragOffset.y) : r ? (t.dragPosition.x = t.dragStartPosition.x, t.dragPosition.y = t.dragStartPosition.y) : (t.dragPosition.x = t.dragStartPosition.x + t.dragOffset.x, t.dragPosition.y = t.dragStartPosition.y + t.dragOffset.y) : (t.dragPosition.x = t.dragStartPosition.x + t.dragOffset.x, t.dragPosition.y = t.dragStartPosition.y + t.dragOffset.y) } }; this.events.pointerdown = function (o) { r = !(!o.touches || !o.touches[0]), t.props.onPointerDown(t.getState(), o, r); var n = r ? o.touches[0] : o, a = n.pageX, l = n.pageY, p = n.clientX, c = n.clientY, h = t.props.viewport, u = h.getBoundingClientRect(); if (!(p - u.left >= h.clientLeft + h.clientWidth) && !(c - u.top >= h.clientTop + h.clientHeight) && t.props.shouldScroll(t.getState(), o) && 2 !== o.button && ("mouse" !== t.props.pointerMode || !r) && ("touch" !== t.props.pointerMode || r) && !(t.props.inputsFocus && ["input", "textarea", "button", "select", "label"].indexOf(o.target.nodeName.toLowerCase()) > -1)) { if (t.props.textSelection) { if (function (t, e, i) { for (var o = t.childNodes, n = document.createRange(), r = 0; r < o.length; r++) { var s = o[r]; if (3 === s.nodeType) { n.selectNodeContents(s); var a = n.getBoundingClientRect(); if (e >= a.left && i >= a.top && e <= a.right && i <= a.bottom) return s } } return !1 }(o.target, p, c)) return; (f = window.getSelection ? window.getSelection() : document.selection) && (f.removeAllRanges ? f.removeAllRanges() : f.empty && f.empty()) } var f; t.isDragging = !0, e.x = a, e.y = l, i.x = p, i.y = c, t.dragStartPosition.x = t.position.x, t.dragStartPosition.y = t.position.y, s(o), t.startAnimationLoop(), !r && t.props.pointerDownPreventDefault && o.preventDefault() } }, this.events.pointermove = function (e) { !e.cancelable || "all" !== t.props.lockScrollOnDragDirection && t.props.lockScrollOnDragDirection !== o || e.preventDefault(), s(e), t.props.onPointerMove(t.getState(), e, r) }, this.events.pointerup = function (e) { t.isDragging = !1, o = null, t.props.onPointerUp(t.getState(), e, r) }, this.events.wheel = function (e) { var i = t.getState(); t.props.emulateScroll && (t.velocity.x = 0, t.velocity.y = 0, t.isScrolling = !0, t.scrollOffset.x = -e.deltaX, t.scrollOffset.y = -e.deltaY, t.props.onWheel(i, e), t.startAnimationLoop(), clearTimeout(n), n = setTimeout((function () { return t.isScrolling = !1 }), 80), t.props.preventDefaultOnEmulateScroll && t.getDragDirection(t.getDragAngle(-e.deltaX, -e.deltaY), t.props.dragDirectionTolerance) === t.props.preventDefaultOnEmulateScroll && e.preventDefault()) }, this.events.scroll = function () { var e = t.props.viewport, i = e.scrollLeft, o = e.scrollTop; Math.abs(t.position.x + i) > 3 && (t.position.x = -i, t.velocity.x = 0), Math.abs(t.position.y + o) > 3 && (t.position.y = -o, t.velocity.y = 0) }, this.events.click = function (e) { var i = t.getState(), o = "vertical" !== t.props.direction ? i.dragOffset.x : 0, n = "horizontal" !== t.props.direction ? i.dragOffset.y : 0; Math.max(Math.abs(o), Math.abs(n)) > 5 && (e.preventDefault(), e.stopPropagation()), t.props.onClick(i, e, r) }, this.events.contentLoad = function () { return t.updateMetrics() }, this.events.resize = function () { return t.updateMetrics() }, this.props.viewport.addEventListener("mousedown", this.events.pointerdown), this.props.viewport.addEventListener("touchstart", this.events.pointerdown, { passive: !1 }), this.props.viewport.addEventListener("click", this.events.click), this.props.viewport.addEventListener("wheel", this.events.wheel, { passive: !1 }), this.props.viewport.addEventListener("scroll", this.events.scroll), this.props.content.addEventListener("load", this.events.contentLoad, !0), window.addEventListener("mousemove", this.events.pointermove), window.addEventListener("touchmove", this.events.pointermove, { passive: !1 }), window.addEventListener("mouseup", this.events.pointerup), window.addEventListener("touchend", this.events.pointerup), window.addEventListener("resize", this.events.resize) } }, { key: "destroy", value: function () { this.props.viewport.removeEventListener("mousedown", this.events.pointerdown), this.props.viewport.removeEventListener("touchstart", this.events.pointerdown), this.props.viewport.removeEventListener("click", this.events.click), this.props.viewport.removeEventListener("wheel", this.events.wheel), this.props.viewport.removeEventListener("scroll", this.events.scroll), this.props.content.removeEventListener("load", this.events.contentLoad), window.removeEventListener("mousemove", this.events.pointermove), window.removeEventListener("touchmove", this.events.pointermove), window.removeEventListener("mouseup", this.events.pointerup), window.removeEventListener("touchend", this.events.pointerup), window.removeEventListener("resize", this.events.resize) } }]) && a(e.prototype, i), o && a(e, o), t }() }]).default })); var scrollElementExists = document.getElementById("line_ww_f09e025432ab2");; if (scrollElementExists !== null) { var scww_f09e025432ab2 = new ScrollBooster({ viewport: document.getElementById("line_ww_f09e025432ab2"), content: document.getElementById("line_inner_ww_f09e025432ab2"), direction: "horizontal", scrollMode: "transform" }); }; function moveww_f09e025432ab2(direction) { var itemWidth = 59; var pos = scww_f09e025432ab2.getState(); var currentPosition = (Math.floor(pos["position"]["x"] / itemWidth) * itemWidth); if (direction === "right") { var maxPosition = scww_f09e025432ab2.edgeX["from"] * -1; var newPosition = currentPosition + (3 * itemWidth); if (newPosition > maxPosition) { newPosition = maxPosition; } } else { var newPosition = currentPosition - (3 * itemWidth); if (newPosition < 0) { newPosition = 0; } } var t = scww_f09e025432ab2.scrollTo({ x: newPosition }); }; 'use strict'; (function (root, factory) { if (typeof define === "function" && define.amd) { define(factory) } else if (typeof exports === "object") { module.exports = factory() } else { root.ResizeSensor = factory() } }(typeof window !== 'undefined' ? window : this, function () {
+                if (typeof window === "undefined") { return null }
+                var globalWindow = typeof window != 'undefined' && window.Math == Math ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')(); var requestAnimationFrame = globalWindow.requestAnimationFrame || globalWindow.mozRequestAnimationFrame || globalWindow.webkitRequestAnimationFrame || function (fn) { return globalWindow.setTimeout(fn, 20) }; function forEachElement(elements, callback) { var elementsType = Object.prototype.toString.call(elements); var isCollectionTyped = ('[object Array]' === elementsType || ('[object NodeList]' === elementsType) || ('[object HTMLCollection]' === elementsType) || ('[object Object]' === elementsType) || ('undefined' !== typeof jQuery && elements instanceof jQuery) || ('undefined' !== typeof Elements && elements instanceof Elements)); var i = 0, j = elements.length; if (isCollectionTyped) { for (; i < j; i++) { callback(elements[i]) } } else { callback(elements) } }
+                function getElementSize(element) {
+                    if (!element.getBoundingClientRect) { return { width: element.offsetWidth, height: element.offsetHeight } }
+                    var rect = element.getBoundingClientRect(); return { width: Math.round(rect.width), height: Math.round(rect.height) }
+                }
+                function setStyle(element, style) { Object.keys(style).forEach(function (key) { element.style[key] = style[key] }) }
+                var ResizeSensor = function (element, callback) {
+                    function EventQueue() {
+                        var q = []; this.add = function (ev) { q.push(ev) }; var i, j; this.call = function (sizeInfo) { for (i = 0, j = q.length; i < j; i++) { q[i].call(this, sizeInfo) } }; this.remove = function (ev) {
+                            var newQueue = []; for (i = 0, j = q.length; i < j; i++) { if (q[i] !== ev) newQueue.push(q[i]) }
+                            q = newQueue
+                        }; this.length = function () { return q.length }
+                    }
+                    function attachResizeEvent(element, resized) {
+                        if (!element) return; if (element.resizedAttached) { element.resizedAttached.add(resized); return }
+                        element.resizedAttached = new EventQueue(); element.resizedAttached.add(resized); element.resizeSensor = document.createElement('div'); element.resizeSensor.dir = 'ltr'; element.resizeSensor.className = 'resize-sensor'; var style = { pointerEvents: 'none', position: 'absolute', left: '0px', top: '0px', right: '0px', bottom: '0px', overflow: 'hidden', zIndex: '-1', visibility: 'hidden', maxWidth: '100%' }; var styleChild = { position: 'absolute', left: '0px', top: '0px', transition: '0s', }; setStyle(element.resizeSensor, style); var expand = document.createElement('div'); expand.className = 'resize-sensor-expand'; setStyle(expand, style); var expandChild = document.createElement('div'); setStyle(expandChild, styleChild); expand.appendChild(expandChild); var shrink = document.createElement('div'); shrink.className = 'resize-sensor-shrink'; setStyle(shrink, style); var shrinkChild = document.createElement('div'); setStyle(shrinkChild, styleChild); setStyle(shrinkChild, { width: '200%', height: '200%' }); shrink.appendChild(shrinkChild); element.resizeSensor.appendChild(expand); element.resizeSensor.appendChild(shrink); element.appendChild(element.resizeSensor); var computedStyle = window.getComputedStyle(element); var position = computedStyle ? computedStyle.getPropertyValue('position') : null; if ('absolute' !== position && 'relative' !== position && 'fixed' !== position) { element.style.position = 'relative' }
+                        var dirty, rafId; var size = getElementSize(element); var lastWidth = 0; var lastHeight = 0; var initialHiddenCheck = !0; var lastAnimationFrame = 0; var resetExpandShrink = function () { var width = element.offsetWidth; var height = element.offsetHeight; expandChild.style.width = (width + 10) + 'px'; expandChild.style.height = (height + 10) + 'px'; expand.scrollLeft = width + 10; expand.scrollTop = height + 10; shrink.scrollLeft = width + 10; shrink.scrollTop = height + 10 }; var reset = function () {
+                            if (initialHiddenCheck) {
+                                var invisible = element.offsetWidth === 0 && element.offsetHeight === 0; if (invisible) {
+                                    if (!lastAnimationFrame) { lastAnimationFrame = requestAnimationFrame(function () { lastAnimationFrame = 0; reset() }) }
+                                    return
+                                } else { initialHiddenCheck = !1 }
+                            }
+                            resetExpandShrink()
+                        }; element.resizeSensor.resetSensor = reset; var onResized = function () { rafId = 0; if (!dirty) return; lastWidth = size.width; lastHeight = size.height; if (element.resizedAttached) { element.resizedAttached.call(size) } }; var onScroll = function () {
+                            size = getElementSize(element); dirty = size.width !== lastWidth || size.height !== lastHeight; if (dirty && !rafId) { rafId = requestAnimationFrame(onResized) }
+                            reset()
+                        }; var addEvent = function (el, name, cb) { if (el.attachEvent) { el.attachEvent('on' + name, cb) } else { el.addEventListener(name, cb) } }; addEvent(expand, 'scroll', onScroll); addEvent(shrink, 'scroll', onScroll); requestAnimationFrame(reset)
+                    }
+                    forEachElement(element, function (elem) { attachResizeEvent(elem, callback) }); this.detach = function (ev) { ResizeSensor.detach(element, ev) }; this.reset = function () { element.resizeSensor.resetSensor() }
+                }; ResizeSensor.reset = function (element) { forEachElement(element, function (elem) { elem.resizeSensor.resetSensor() }) }; ResizeSensor.detach = function (element, ev) {
+                    forEachElement(element, function (elem) {
+                        if (!elem) return; if (elem.resizedAttached && typeof ev === "function") { elem.resizedAttached.remove(ev); if (elem.resizedAttached.length()) return }
+                        if (elem.resizeSensor) {
+                            if (elem.contains(elem.resizeSensor)) { elem.removeChild(elem.resizeSensor) }
+                            delete elem.resizeSensor; delete elem.resizedAttached
+                        }
+                    })
+                }; if (typeof MutationObserver !== "undefined") { var observer = new MutationObserver(function (mutations) { for (var i in mutations) { if (mutations.hasOwnProperty(i)) { var items = mutations[i].addedNodes; for (var j = 0; j < items.length; j++) { if (items[j].resizeSensor) { ResizeSensor.reset(items[j]) } } } } }); document.addEventListener("DOMContentLoaded", function (event) { observer.observe(document.body, { childList: !0, subtree: !0, }) }) }
+                return ResizeSensor
+            })); 'use strict'; (function (root, factory) { if (typeof define === "function" && define.amd) { define(['./ResizeSensor.js'], factory) } else if (typeof exports === "object") { module.exports = factory(require('./ResizeSensor.js')) } else { root.ElementQueries = factory(root.ResizeSensor); root.ElementQueries.listen() } }(typeof window !== 'undefined' ? window : this, function (ResizeSensor) {
+                var ElementQueries = function () {
+                    var cssStyleElement; var allQueries = {}; var idToSelectorMapping = []; function getEmSize(element) {
+                        if (!element) { element = document.documentElement }
+                        var fontSize = window.getComputedStyle(element, null).fontSize; return parseFloat(fontSize) || 16
+                    }
+                    function getElementSize(element) {
+                        if (!element.getBoundingClientRect) { return { width: element.offsetWidth, height: element.offsetHeight } }
+                        var rect = element.getBoundingClientRect(); return { width: Math.round(rect.width), height: Math.round(rect.height) }
+                    }
+                    function convertToPx(element, value) { var numbers = value.split(/\d/); var units = numbers[numbers.length - 1]; value = parseFloat(value); switch (units) { case "px": return value; case "em": return value * getEmSize(element); case "rem": return value * getEmSize(); case "vw": return value * document.documentElement.clientWidth / 100; case "vh": return value * document.documentElement.clientHeight / 100; case "vmin": case "vmax": var vw = document.documentElement.clientWidth / 100; var vh = document.documentElement.clientHeight / 100; var chooser = Math[units === "vmin" ? "min" : "max"]; return value * chooser(vw, vh); default: return value } }
+                    function SetupInformation(element, id) {
+                        this.element = element; var key, option, elementSize, value, actualValue, attrValues, attrValue, attrName; var attributes = ['min-width', 'min-height', 'max-width', 'max-height']; this.call = function () {
+                            elementSize = getElementSize(this.element); attrValues = {}; for (key in allQueries[id]) {
+                                if (!allQueries[id].hasOwnProperty(key)) { continue }
+                                option = allQueries[id][key]; value = convertToPx(this.element, option.value); actualValue = option.property === 'width' ? elementSize.width : elementSize.height; attrName = option.mode + '-' + option.property; attrValue = ''; if (option.mode === 'min' && actualValue >= value) { attrValue += option.value }
+                                if (option.mode === 'max' && actualValue <= value) { attrValue += option.value }
+                                if (!attrValues[attrName]) attrValues[attrName] = ''; if (attrValue && -1 === (' ' + attrValues[attrName] + ' ').indexOf(' ' + attrValue + ' ')) { attrValues[attrName] += ' ' + attrValue }
+                            }
+                            for (var k in attributes) { if (!attributes.hasOwnProperty(k)) continue; if (attrValues[attributes[k]]) { this.element.setAttribute(attributes[k], attrValues[attributes[k]].substr(1)) } else { this.element.removeAttribute(attributes[k]) } }
+                        }
+                    }
+                    function setupElement(element, id) {
+                        if (!element.elementQueriesSetupInformation) { element.elementQueriesSetupInformation = new SetupInformation(element, id) }
+                        if (!element.elementQueriesSensor) { element.elementQueriesSensor = new ResizeSensor(element, function () { element.elementQueriesSetupInformation.call() }) }
+                    }
+                    function queueQuery(selector, mode, property, value) {
+                        if (typeof (allQueries[selector]) === 'undefined') { allQueries[selector] = []; var id = idToSelectorMapping.length; cssStyleElement.innerHTML += '\n' + selector + ' {animation: 0.1s element-queries;}'; cssStyleElement.innerHTML += '\n' + selector + ' > .resize-sensor {min-width: ' + id + 'px;}'; idToSelectorMapping.push(selector) }
+                        allQueries[selector].push({ mode: mode, property: property, value: value })
+                    }
+                    function getQuery(container) {
+                        var query; if (document.querySelectorAll) query = (container) ? container.querySelectorAll.bind(container) : document.querySelectorAll.bind(document); if (!query && 'undefined' !== typeof $$) query = $$; if (!query && 'undefined' !== typeof jQuery) query = jQuery; if (!query) { throw 'No document.querySelectorAll, jQuery or Mootools\'s $$ found.' }
+                        return query
+                    }
+                    function findElementQueriesElements(container) { var query = getQuery(container); for (var selector in allQueries) if (allQueries.hasOwnProperty(selector)) { var elements = query(selector, container); for (var i = 0, j = elements.length; i < j; i++) { setupElement(elements[i], selector) } } }
+                    function attachResponsiveImage(element) {
+                        var children = []; var rules = []; var sources = []; var defaultImageId = 0; var lastActiveImage = -1; var loadedImages = []; for (var i in element.children) { if (!element.children.hasOwnProperty(i)) continue; if (element.children[i].tagName && element.children[i].tagName.toLowerCase() === 'img') { children.push(element.children[i]); var minWidth = element.children[i].getAttribute('min-width') || element.children[i].getAttribute('data-min-width'); var src = element.children[i].getAttribute('data-src') || element.children[i].getAttribute('url'); sources.push(src); var rule = { minWidth: minWidth }; rules.push(rule); if (!minWidth) { defaultImageId = children.length - 1; element.children[i].style.display = 'block' } else { element.children[i].style.display = 'none' } } }
+                        lastActiveImage = defaultImageId; function check() {
+                            var imageToDisplay = !1, i; for (i in children) { if (!children.hasOwnProperty(i)) continue; if (rules[i].minWidth) { if (element.offsetWidth > rules[i].minWidth) { imageToDisplay = i } } }
+                            if (!imageToDisplay) { imageToDisplay = defaultImageId }
+                            if (lastActiveImage !== imageToDisplay) { if (!loadedImages[imageToDisplay]) { var image = new Image(); image.onload = function () { children[imageToDisplay].src = sources[imageToDisplay]; children[lastActiveImage].style.display = 'none'; children[imageToDisplay].style.display = 'block'; loadedImages[imageToDisplay] = !0; lastActiveImage = imageToDisplay }; image.src = sources[imageToDisplay] } else { children[lastActiveImage].style.display = 'none'; children[imageToDisplay].style.display = 'block'; lastActiveImage = imageToDisplay } } else { children[imageToDisplay].src = sources[imageToDisplay] }
+                        }
+                        element.resizeSensorInstance = new ResizeSensor(element, check); check()
+                    }
+                    function findResponsiveImages() { var query = getQuery(); var elements = query('[data-responsive-image],[responsive-image]'); for (var i = 0, j = elements.length; i < j; i++) { attachResponsiveImage(elements[i]) } }
+                    var regex = /,?[\s\t]*([^,\n]*?)((?:\[[\s\t]*?(?:min|max)-(?:width|height)[\s\t]*?[~$\^]?=[\s\t]*?"[^"]*?"[\s\t]*?])+)([^,\n\s\{]*)/mgi; var attrRegex = /\[[\s\t]*?(min|max)-(width|height)[\s\t]*?[~$\^]?=[\s\t]*?"([^"]*?)"[\s\t]*?]/mgi; function extractQuery(css) { var match, smatch, attrs, attrMatch; css = css.replace(/'/g, '"'); while (null !== (match = regex.exec(css))) { smatch = match[1] + match[3]; attrs = match[2]; while (null !== (attrMatch = attrRegex.exec(attrs))) { queueQuery(smatch, attrMatch[1], attrMatch[2], attrMatch[3]) } } }
+                    function readRules(rules) {
+                        var selector = ''; if (!rules) { return }
+                        if ('string' === typeof rules) { rules = rules.toLowerCase(); if (-1 !== rules.indexOf('min-width') || -1 !== rules.indexOf('max-width')) { extractQuery(rules) } } else { for (var i = 0, j = rules.length; i < j; i++) { if (1 === rules[i].type) { selector = rules[i].selectorText || rules[i].cssText; if (-1 !== selector.indexOf('min-height') || -1 !== selector.indexOf('max-height')) { extractQuery(selector) } else if (-1 !== selector.indexOf('min-width') || -1 !== selector.indexOf('max-width')) { extractQuery(selector) } } else if (4 === rules[i].type) { readRules(rules[i].cssRules || rules[i].rules) } else if (3 === rules[i].type) { if (rules[i].styleSheet.hasOwnProperty("cssRules")) { readRules(rules[i].styleSheet.cssRules) } } } }
+                    }
+                    var defaultCssInjected = !1; this.init = function () {
+                        var animationStart = 'animationstart'; if (typeof document.documentElement.style.webkitAnimationName !== 'undefined') { animationStart = 'webkitAnimationStart' } else if (typeof document.documentElement.style.MozAnimationName !== 'undefined') { animationStart = 'mozanimationstart' } else if (typeof document.documentElement.style.OAnimationName !== 'undefined') { animationStart = 'oanimationstart' }
+                        document.body.addEventListener(animationStart, function (e) { var element = e.target; var styles = element && window.getComputedStyle(element, null); var animationName = styles && styles.getPropertyValue('animation-name'); var requiresSetup = animationName && (-1 !== animationName.indexOf('element-queries')); if (requiresSetup) { element.elementQueriesSensor = new ResizeSensor(element, function () { if (element.elementQueriesSetupInformation) { element.elementQueriesSetupInformation.call() } }); var sensorStyles = window.getComputedStyle(element.resizeSensor, null); var id = sensorStyles.getPropertyValue('min-width'); id = parseInt(id.replace('px', '')); setupElement(e.target, idToSelectorMapping[id]) } }); if (!defaultCssInjected) { cssStyleElement = document.createElement('style'); cssStyleElement.type = 'text/css'; cssStyleElement.innerHTML = '[responsive-image] > img, [data-responsive-image] {overflow: hidden; padding: 0; } [responsive-image] > img, [data-responsive-image] > img {width: 100%;}'; cssStyleElement.innerHTML += '\n@keyframes element-queries { 0% { visibility: inherit; } }'; document.getElementsByTagName('head')[0].appendChild(cssStyleElement); defaultCssInjected = !0 }
+                        for (var i = 0, j = document.styleSheets.length; i < j; i++) {
+                            try {
+                                if (document.styleSheets[i].href && 0 === document.styleSheets[i].href.indexOf('file://')) { console.warn("CssElementQueries: unable to parse local css files, " + document.styleSheets[i].href) }
+                                readRules(document.styleSheets[i].cssRules || document.styleSheets[i].rules || document.styleSheets[i].cssText)
+                            } catch (e) { }
+                        }
+                        findResponsiveImages()
+                    }; this.findElementQueriesElements = function (container) { findElementQueriesElements(container) }; this.update = function () { this.init() }
+                }; ElementQueries.update = function () { ElementQueries.instance.update() }; ElementQueries.detach = function (element) { if (element.elementQueriesSetupInformation) { element.elementQueriesSensor.detach(); delete element.elementQueriesSetupInformation; delete element.elementQueriesSensor } else if (element.resizeSensorInstance) { element.resizeSensorInstance.detach(); delete element.resizeSensorInstance } }; ElementQueries.init = function () {
+                    if (!ElementQueries.instance) { ElementQueries.instance = new ElementQueries() }
+                    ElementQueries.instance.init()
+                }; var domLoaded = function (callback) {
+                    if (document.addEventListener) { document.addEventListener('DOMContentLoaded', callback, !1) }
+                    else if (/KHTML|WebKit|iCab/i.test(navigator.userAgent)) { var DOMLoadTimer = setInterval(function () { if (/loaded|complete/i.test(document.readyState)) { callback(); clearInterval(DOMLoadTimer) } }, 10) }
+                    else window.onload = callback
+                }; ElementQueries.findElementQueriesElements = function (container) { ElementQueries.instance.findElementQueriesElements(container) }; ElementQueries.listen = function () { domLoaded(ElementQueries.init) }; return ElementQueries
+            })); if (typeof elementQueries !== "undefined") { } else { var elementQueries = new ElementQueries(); elementQueries.update(); };; elementQueries.update();</script>
     <style>	
     
 @font-face {
@@ -5256,10 +5369,17 @@ header.et-l.et-l--header:after {
         }
     }    
     .et_pb_row_15 {
-    border-width: 1px;
-    border-color: #000000;
-}
-	</style>
+        border-width: 1px;
+        border-color: #000000;
+    }
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Ajusta según tus necesidades */
+        }
+
+</style>
 
 </head>
 <body 
@@ -5273,10 +5393,11 @@ header.et-l.et-l--header:after {
                     <div class="entry-content">
                         <div class="et-l et-l--post">
                             <div class="et_builder_inner_content et_pb_gutters3">
-                                <div class="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular">
+                                <div class="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular" >
                                     <div class="et_pb_row et_pb_row_0">
                                         <div class="et_pb_column et_pb_column_1_2 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough">
-                                            <div class="et_pb_module et_pb_text et_pb_text_0 et_pb_text_align_left et_pb_text_align_center-phone et_pb_bg_layout_light et_multi_view__hover_selector">
+                                            
+                                            <div class="et_pb_module et_pb_text et_pb_text_0 et_pb_text_align_left et_pb_text_align_center-phone et_pb_bg_layout_light et_multi_view__hover_selector">                                                                                                
                                                 <div class="et_pb_text_inner et_multi_view_swapped" data-et-multi-view="{&quot;schema&quot;:{&quot;content&quot;:{&quot;desktop&quot;:&quot;<p style=\&quot;text-align: left;\&quot;>\u00a0\u00a1Nos casamos!<\/p>&quot;,&quot;tablet&quot;:&quot;<p style=\&quot;text-align: left;\&quot;>\u00a1Nos casamos!<\/p>&quot;,&quot;phone&quot;:&quot;<p style=\&quot;text-align: center;\&quot;>\u00a1Nos casamos!<\/p>&quot;}},&quot;slug&quot;:&quot;et_pb_text&quot;}" data-et-multi-view-load-tablet-hidden="true" data-et-multi-view-load-phone-hidden="true"><p style="text-align: left;">&nbsp;¡Nos casamos!</p></div>
                                             </div>
                                             <div class="et_pb_module et_pb_text et_pb_text_1 et_pb_text_align_left et_pb_bg_layout_light et_multi_view__hover_selector">
@@ -5308,11 +5429,7 @@ header.et-l.et-l--header:after {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="gallery">
-                                    <h2>Galería</h2>
-                                    <img src="foto1.jpg" alt="Foto de los novios">
-                                    <img src="foto2.jpg" alt="Foto del lugar">
-                                </div>
+
 								<div class="et_pb_section et_pb_section_3 et_pb_with_background et_section_regular">
 									<div class="et_pb_with_border et_pb_row et_pb_row_7 et_had_animation" style="">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_12  et_pb_css_mix_blend_mode_passthrough et-last-child">
@@ -5668,7 +5785,7 @@ header.et-l.et-l--header:after {
                                         </div>
                                     </div>
                                 </div> 
-                                <!--     
+  
                                 <div class="rsvp">
                                     <h2>Confirmación de Asistencia</h2>
                                     <p>Por favor, confirma tu asistencia antes del 1 de noviembre de 2024</p>
@@ -5689,7 +5806,8 @@ header.et-l.et-l--header:after {
                                         <button class="btn-fill rsvp-btn">¡Sí, asistiré!</button>
                                     </form>
                                 </div>
-                                -->
+  
+								<!--
                                 <div id="RSVP" class="et_pb_section et_pb_section_7 et_pb_with_background et_section_regular">
                                     <div class="et_pb_with_border et_pb_row et_pb_row_15 et_pb_equal_columns et_pb_gutters1 et_had_animation">
                                         <div class="et_pb_with_border et_pb_column_1_2 et_pb_column et_pb_column_25  et_pb_css_mix_blend_mode_passthrough">
@@ -5722,7 +5840,7 @@ header.et-l.et-l--header:after {
                                             <div id="et_pb_contact_form_0" class="et_pb_with_border et_pb_module et_pb_contact_form_0 et_pb_contact_form_container clearfix et_had_animation" data-form_unique_num="0" data-form_unique_id="1fb9ea2c-5120-4e2e-8abe-2f55e56a8505" style="">
                                                 <div class="et-pb-contact-message"></div>
                                                 <div class="et_pb_contact">
-                                                    <form id="rsvp-form" class="et_pb_contact_form clearfix" method="post" action="">
+                                                    <form id="rsvp-form" class="rsvp-form" method="post" action="">
                                                         <p class="et_pb_with_border et_pb_contact_field et_pb_contact_field_0  et_pb_text_align_center et_pb_contact_field_last" data-id="nombre" data-type="input">
                                                             <label for="et_pb_contact_nombre_0" class="et_pb_contact_form_label">Nombre</label>
                                                             <input type="text" id="et_pb_contact_nombre_0" class="input" value="" name="et_pb_contact_nombre_0" data-required_mark="required" data-field_type="input" data-original_id="nombre" placeholder="Nombre">
@@ -5749,6 +5867,7 @@ header.et-l.et-l--header:after {
                                         </div>
                                     </div>
                                 </div>
+								-->
                             </div>
                         </div>
                     </div>
@@ -5782,6 +5901,15 @@ header.et-l.et-l--header:after {
             document.getElementById("countdown-days").innerHTML = "¡Es el día de la boda!";
 		}
 	}, 1000);
+</script>
+<script type="text/javascript" id="divi-custom-script-js-extra">
+    /* <![CDATA[ */
+    var DIVI = { "item_count": "%d Item", "items_count": "%d Items" };
+    var et_builder_utils_params = { "condition": { "diviTheme": true, "extraTheme": false }, "scrollLocations": ["app", "top"], "builderScrollLocations": { "desktop": "app", "tablet": "app", "phone": "app" }, "onloadScrollLocation": "app", "builderType": "fe" };
+    var et_frontend_scripts = { "builderCssContainerPrefix": "#et-boc", "builderCssLayoutPrefix": "#et-boc .et-l" };
+    var et_pb_custom = { "ajaxurl": "https:\/\/invitaria.net\/wp-admin\/admin-ajax.php", "images_uri": "https:\/\/invitaria.net\/wp-content\/themes\/Divi\/images", "builder_images_uri": "https:\/\/invitaria.net\/wp-content\/themes\/Divi\/includes\/builder\/images", "et_frontend_nonce": "1db3907477", "subscription_failed": "Por favor, revise los campos a continuaci\u00f3n para asegurarse de que la informaci\u00f3n introducida es correcta.", "et_ab_log_nonce": "02533bbb21", "fill_message": "Por favor, rellene los siguientes campos:", "contact_error_message": "Por favor, arregle los siguientes errores:", "invalid": "De correo electr\u00f3nico no v\u00e1lida", "captcha": "Captcha", "prev": "Anterior", "previous": "Anterior", "next": "Siguiente", "wrong_captcha": "Ha introducido un n\u00famero equivocado de captcha.", "wrong_checkbox": "Caja", "ignore_waypoints": "no", "is_divi_theme_used": "1", "widget_search_selector": ".widget_search", "ab_tests": [], "is_ab_testing_active": "", "page_id": "5118", "unique_test_id": "", "ab_bounce_rate": "5", "is_cache_plugin_active": "no", "is_shortcode_tracking": "", "tinymce_uri": "https:\/\/invitaria.net\/wp-content\/themes\/Divi\/includes\/builder\/frontend-builder\/assets\/vendors", "accent_color": "#2ea3f2", "waypoints_options": [] };
+    var et_pb_box_shadow_elements = [];
+    /* ]]> */
 </script>
 
 </body>
