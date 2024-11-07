@@ -140,7 +140,7 @@ body.et_button_custom_icon #page-container .et_pb_button_0:after,body.et_button_
 /* Color */
 .et_pb_section_3.et_pb_section {
     padding-bottom: 25px;
-    background-color: rgba(209, 209, 209, 0.6)!important
+    background-color: #e2e2e2 !important
 }
 
 .et_pb_row_4.et_pb_row {
@@ -201,7 +201,7 @@ body.et_button_custom_icon #page-container .et_pb_button_0:after,body.et_button_
 
 /* Color Ceremonia recepcion */
 .et_pb_row_5 {
-    background-color: rgba(209, 209, 209, 0.6);
+    background-color: #faf2e9;
     border-color: #faf2e9;
     border-left-width: 205px
 }
@@ -331,12 +331,12 @@ body.et_button_custom_icon #page-container .et_pb_button_2:after,body.et_button_
 
 /* Color TimeLine */
 .dipl_timeline_0 .dipl_item_content_inner {
-    background-color: rgba(209, 209, 209, 0.6) !important
+    background-color: #faf2e9 !important
 }
 
 /* Color CountDown */
 .et_pb_row_7 {
-    background-color: rgba(209, 209, 209, 0.6);
+    background-color: #faf2e9;
     border-width: 0px;
     border-style: dashed;
     border-color: #757575;
@@ -1041,7 +1041,7 @@ div.et_pb_section.et_pb_section_8>.et_pb_background_pattern {
 
 /* Color */
 .et_pb_column_26 {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: #faf2e9;
     padding-top: 60px;
     padding-right: 60px;
     padding-bottom: 60px;
