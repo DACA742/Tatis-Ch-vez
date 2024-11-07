@@ -144,6 +144,7 @@ body.et_button_custom_icon #page-container .et_pb_button_0:after,body.et_button_
 }
 
 .et_pb_row_4.et_pb_row {
+    background-color: #faf2e9;
     padding-top: 90px!important;
     padding-top: 90px
 }
@@ -160,6 +161,7 @@ body.et_button_custom_icon #page-container .et_pb_button_0:after,body.et_button_
     font-weight: 700;
     text-transform: uppercase;
     font-size: 14px;
+    text-align: center;
     color: #52616b!important;
     letter-spacing: 1px;
     line-height: 1.4em
@@ -938,9 +940,7 @@ div.et_pb_section.et_pb_section_8>.et_pb_background_pattern {
     margin-bottom: 0px!important
 }
 
-.et_pb_column_7 {
-    background-image: url(https://invitaria.net/wp-content/uploads/2023/05/wedding-4.webp)
-}
+
 
 .dipl_timeline_item_0.dipl_timeline_item .dipl_item_content_inner,.dipl_timeline_item_1.dipl_timeline_item .dipl_item_content_inner,.dipl_timeline_item_2.dipl_timeline_item .dipl_item_content_inner,.dipl_timeline_item_3.dipl_timeline_item .dipl_item_content_inner,.dipl_timeline_item_4.dipl_timeline_item .dipl_item_content_inner {
     border-radius: 10px 10px 10px 10px;
@@ -1486,7 +1486,7 @@ div.et_pb_section.et_pb_section_8>.et_pb_background_pattern {
     }
 
     .et_pb_section_3.et_pb_section {
-        padding-top: 0px;
+        
         padding-bottom: 1px
     }
 
